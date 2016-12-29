@@ -1,0 +1,15 @@
+{
+  "name": "ggb",
+  "version": "1.0.0",
+  "description": "IOT Stuff",
+  "main": "index.js",
+  "dependencies": {
+    "gulp-develop-server": "^0.5.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cady",
+  "license": "ISC"
+}
