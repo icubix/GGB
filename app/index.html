@@ -1,1 +1,95 @@
-Hello Gulp i am working....!
+<html >
+<head>
+	<title>
+		GGB
+	</title>
+	
+	 <script src="/js/angular.min.js"></script>
+     <script src="/js/angular-route.min.js"></script>
+	 <script src="/js/angular-cookies.js"></script>
+<!-- 
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" 
+   rel="stylesheet" type="text/css" /> -->
+<link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<!-- <link href="assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css" />
+<link href="assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" /> -->
+<link href="assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+<link href="assets/pages/css/login.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+        <link rel="shortcut icon" href="favicon.ico" /> </head>
+
+</head>
+<body ng-app="GGBApp">
+
+
+
+
+        <div class="content">
+            <!-- BEGIN LOGIN FORM -->
+            <form class="login-form">
+                <div class="col-md-6 no-padding">
+                    <div class="form-group">
+                        <label class="control-label colorwhite">Welcome to Brand Name</label>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label colorwhite">Brand Name provides industry leading service in Blue tooth low energy service</label>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label colorwhite">name.com<span class="marlf10 pull-right">Support</span></label>
+</div>
+                    
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="control-label colorwhite">Username</label>
+                       <div class="input-group">
+                        <span class="input-group-addon brdtxt"><i class="glyphicon glyphicon-user"></i></span>
+                        <input id="email" type="text" class="brd" name="email" placeholder="Email">
+                    </div>
+                  
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label colorwhite">Password</label>
+                        <div class="input-group">
+                            <span class="input-group-addon brdtxt"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input id="password" type="password" class="brd" name="password" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn green uppercase">Login</button>                       
+                    </div>  
+                    <label class="control-label margin-top-10">
+                        <a class="colorwhite" href="#">Need Help in Sign in</a>
+                    </label>
+                    <label class="control-label">
+                        <a href="#" class="colorwhite">  Register here to become a new supplier</a>
+                    </label>                  
+                   
+                </div>
+            </form>
+        </div>
+		
+
+<div class="top-red-bar">
+    <div class="container">
+    
+      </h1>
+    
+        <div class="head-rt move-right">
+        	
+        </div>
+       
+    </div>
+  </div>
+	<div ng-view></div>
+	<script src="/route/route.js"></script>
+	<script src="/controllers/loginCtrl.js"></script>
+	
+
+	
+</body>
+</html>

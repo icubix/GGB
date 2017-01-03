@@ -11,4 +11,4 @@ gulp.task('server:restart',function(){
 
 gulp.task('default',function(){
 	gulp.run('server:start');
-});]
+});
