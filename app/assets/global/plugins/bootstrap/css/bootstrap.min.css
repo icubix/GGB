@@ -8474,7 +8474,7 @@ padding:8px;
 
 .table>thead>tr>th {
 vertical-align:bottom;
-border-bottom:2px solid #e7ecf1;
+border-bottom:1px solid #ccc;
 }
 
 .table>tbody+tbody {
@@ -8832,15 +8832,21 @@ right:15px;
 }
 .sereslt h5{
 text-align: center;
-    width: 268px;
+    width: 100%;
+}
+.sereslt .btn.focus, .btn:focus, .btn:hover{
+    color:#fff!important
 }
 .sereslt button{
 background: #4c5c76;
     padding: 5px 100px;
     color: #fff;
     text-decoration:none;
+    width: 100%;
 }
-
+.textcenter{
+    text-align: center!important;
+}
 .leftcheck{
 width: 520px;
     float: left;

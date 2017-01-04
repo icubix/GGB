@@ -1,8 +1,8 @@
 var app = angular.module('GGBApp.loginCtrl',[]);
-console.log("testing");
-app.controller('loginCtrl',function($scope){
+console.log("testing iunfo");
+app.controller('loginCtrl',function($scope,$rootScope){
 
-//alert("Login controlloer calling");
-
+    $rootScope.IsVisible = false;
+           
 
 });

@@ -1,4 +1,10 @@
-var app = angular.module('GGBApp',['ngRoute','GGBApp.loginCtrl']);
+var app = angular.module('GGBApp',['ngRoute','GGBApp.loginCtrl',
+                                             'GGBApp.checkCtrl',
+                                             'GGBApp.deviceCtrl',
+                                             'GGBApp.notificationCtrl',
+                                             'GGBApp.productCtrl',
+                                             'GGBApp.securityCtrl',
+                                             'GGBApp.userCtrl']);
 console.log('test ing ckali');
 app.config(function($routeProvider) {
   $routeProvider

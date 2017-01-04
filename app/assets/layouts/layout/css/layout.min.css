@@ -1579,7 +1579,7 @@ color: #fff;
 .page-bar .page-breadcrumb {
     display: inline-block;
     float: left;
-    padding: 8px;
+    padding: 8px 27px;
     margin: 0;
     list-style: none
 }
@@ -1591,9 +1591,9 @@ color: #fff;
 }
 .page-bar .page-breadcrumb>li>a,
 .page-bar .page-breadcrumb>li>span {
-    color: #888;
+color: #000;
     font-size: 14px;
-    text-shadow: none
+    text-shadow: none;
 }
 .page-bar .page-breadcrumb>li>i {
     color: #aaa;
@@ -1697,9 +1697,9 @@ color: #fff;
     }
     .page-content-wrapper .page-content {
       
-        margin-top: 10px;
-        min-height: 600px!important;
-        padding: 25px 20px 10px;
+      margin-top: 10px;
+    min-height: 600px!important;
+    padding: 39px 0px;
 
     }
     .page-content-wrapper .page-content.no-min-height {
