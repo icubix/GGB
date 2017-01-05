@@ -36,4 +36,5 @@ app.config(function($routeProvider) {
     templateUrl:'views/securitydetails.html',
     controller:'securityCtrl'
   })
+  .otherwise({redirectTo: '/login'});
 });
