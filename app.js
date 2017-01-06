@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var master = require('./server/masterRouter.js');
+var register = require('./server/registerRouter.js');
 
 app.use(bodyParser.urlencoded({extended : false}));
 app.use(bodyParser.json());
@@ -15,6 +16,7 @@ app.use(function(req, res, next) {
 app.use(express.static('app'));
 
 app.use('/master',master);
+app.use('/register',register);
 
 
 app.get('/',function(req,res)
