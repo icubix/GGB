@@ -21,10 +21,16 @@ auth.prototype.ValidateLogin = function(req,res){
 		}
 		else
 		{
+			var LoggedIn = UpdateSSO(req.body.UserID);
 			return res.json(result);
 		}
 	});
 };
+
+function UpdateSSO(UserID)
+{
+	
+}
 
 auth.prototype.ResetPassword = function(req,res){
 	var query = "update tblusers set PassWord = '" + req.body.PassWord + "'" + " where UserName = '" + req.body.UserName +"'";

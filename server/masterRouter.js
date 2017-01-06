@@ -14,16 +14,12 @@ app.use(bodyParser.json());
 router.use(cors());
 
 router.get('/getCountries',function(req,res){
-	 console.log('testing');
 	 var data = master.getCountries(req,res);
-	 console.log(data);
 	 return data;
 });
 
 router.get('/getSecurityQuestions',function(req,res){
-	 console.log('securityQuestions');
 	 var data = master.getSecurityQuestions(req,res);
-	 console.log(data);
 	 return data;
 });
 

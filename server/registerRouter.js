@@ -15,9 +15,7 @@ app.use(bodyParser.json());
 router.use(cors());
 
 router.post('/registration',function(req,res){
-	 console.log('testing');
 	 var data = register.Registration(req,res);
-	 console.log(data);
 	 return data;
 });
 
