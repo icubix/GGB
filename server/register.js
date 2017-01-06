@@ -35,13 +35,13 @@ register.prototype.Registration = function(req,res){
 			console.log(req.body);
 			console.log(req.body.Addressone);
 			console.log("testing");
-			AddUserRoles(result.insertId,req.body.RoleID,req.body.Addressone,req.body.addresstwo,req.body.city,req.body.state,req.body.countryID,req.body.zipcode,req.body.Phone,req.body.fax,req.body.CompanyName);
+			AddUserRoles(result.insertId,req.body.RoleID,req.body.Addressone,req.body.addresstwo,req.body.city,req.body.state,req.body.countryID,req.body.zipcode,req.body.Phone,req.body.fax,req.body.CompanyName,req.body.QuestionID,req.body.Answer);
 			return res.json(result);
 		}
 	});
 };
 
-function AddUserRoles(UserID,RoleID,AddressOne,AddressTwo,City,State,CountryID,ZipCode,Phone,fax,CompanyName)
+function AddUserRoles(UserID,RoleID,AddressOne,AddressTwo,City,State,CountryID,ZipCode,Phone,fax,CompanyName,QuestionID,Answer)
 {
 	console.log(UserID);
 	console.log(RoleID);
@@ -60,13 +60,13 @@ function AddUserRoles(UserID,RoleID,AddressOne,AddressTwo,City,State,CountryID,Z
 		{
 			console.log("Kali");
 			console.log(result.insertId);
-			AddAddress(AddressOne,AddressTwo,City,State,CountryID,ZipCode,Phone,fax,UserID,CompanyName);
+			AddAddress(AddressOne,AddressTwo,City,State,CountryID,ZipCode,Phone,fax,UserID,CompanyName,QuestionID,Answer);
 			
 		}
 	});
 }
 
-function AddAddress(AddressOne,AddressTwo,City,State,CountryID,ZipCode,Phone,fax,UserID,CompanyName)
+function AddAddress(AddressOne,AddressTwo,City,State,CountryID,ZipCode,Phone,fax,UserID,CompanyName,QuestionID,Answer)
 {
 	
 	var query = "insert into tbladdress(Addressone,addresstwo,city,state,countryID,zipcode,Phone,fax) values(" +
@@ -91,14 +91,14 @@ function AddAddress(AddressOne,AddressTwo,City,State,CountryID,ZipCode,Phone,fax
 			console.log(result.insertId);
 			var AddressID = result.insertId;
 
-			AddCompany(CompanyName,UserID,AddressID);
+			AddCompany(CompanyName,UserID,AddressID,QuestionID,Answer);
 			
 		}
 	});	
 }
 
 
-function AddCompany(CompanyName,UserID,AddressID)
+function AddCompany(CompanyName,UserID,AddressID,QuestionID,Answer)
 {
 	var query = "insert into tblcompany (companyname,userid) values (" +
 				"'" + CompanyName + "'," +
@@ -115,6 +115,7 @@ function AddCompany(CompanyName,UserID,AddressID)
 			var CompanyID = result.insertId;
 
 			AddCompanyAddress(CompanyID,AddressID);
+			AddSecurityQuestions(UserID,QuestionID,Answer);
 			
 		}
 	});	
@@ -126,6 +127,28 @@ function AddCompanyAddress(CompanyID,AddressID)
 	var query = "insert into tblcompanyaddress(CompanyID,AddressID) values(" +
 				"'" + CompanyID + "'," +
 				"'" + AddressID + "'" +
+				")";
+
+	connection.query(query,function(err,result){
+		if(err)
+		{
+			console.log(err);
+		}
+		else
+		{
+			console.log(result.insertId);
+			
+		}
+	});	
+}
+
+function AddSecurityQuestions(UserID,QuestionID,Answer)
+{
+	var query = "insert into tblusersecurityquestions(UserID,QuestionID,Answer,isActive) values(" +
+				"'" + UserID + "'," +
+				"'" + QuestionID + "'," +
+				"'" + Answer + "'," +
+				 1 + "," +
 				")";
 
 	connection.query(query,function(err,result){

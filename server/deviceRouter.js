@@ -19,7 +19,21 @@ router.post('/getDevices',function(req,res){
 	 return data;
 });
 
+router.post('/getDevice',function(req,res){
+	var data = device.getDevice(req,res);
+	return data;
+})
 
+router.post('/updateMachineDetails',function(req,res){
+	var data = device.updateMachineDetails(req,res);
+	return data;
+})
+
+
+router.post('/sendActivationCode',function(req,res){
+	var data = device.sendActivationCode(req,res);
+	return data;
+})
 
 
 module.exports = router;
