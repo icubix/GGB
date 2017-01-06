@@ -32,9 +32,6 @@ register.prototype.Registration = function(req,res){
 		else
 		{
 			console.log(result.insertId);
-			console.log(req.body);
-			console.log(req.body.Addressone);
-			console.log("testing");
 			AddUserRoles(result.insertId,req.body.RoleID,req.body.Addressone,req.body.addresstwo,req.body.city,req.body.state,req.body.countryID,req.body.zipcode,req.body.Phone,req.body.fax,req.body.CompanyName,req.body.QuestionID,req.body.Answer);
 			return res.json(result);
 		}
@@ -58,7 +55,7 @@ function AddUserRoles(UserID,RoleID,AddressOne,AddressTwo,City,State,CountryID,Z
 		}
 		else
 		{
-			console.log("Kali");
+			
 			console.log(result.insertId);
 			AddAddress(AddressOne,AddressTwo,City,State,CountryID,ZipCode,Phone,fax,UserID,CompanyName,QuestionID,Answer);
 			
@@ -87,7 +84,7 @@ function AddAddress(AddressOne,AddressTwo,City,State,CountryID,ZipCode,Phone,fax
 		}
 		else
 		{
-			console.log("coming here");
+			
 			console.log(result.insertId);
 			var AddressID = result.insertId;
 
