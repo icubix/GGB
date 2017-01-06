@@ -15,16 +15,12 @@ app.use(bodyParser.json());
 router.use(cors());
 
 router.post('/validate',function(req,res){
-	 console.log('testing');
 	 var data = auth.ValidateLogin(req,res);
-	 console.log(data);
 	 return data;
 });
 
 router.post('/resetpassword',function(req,res){
-	console.log('reset password');
 	var data = auth.ResetPassword(req,res);
-	console.log(data);
 	return data;
 })
 
