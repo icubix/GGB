@@ -8,7 +8,7 @@
 <div class="login" >
         <div class="content">
             <!-- BEGIN LOGIN FORM -->
-            <form class="login-form">
+            <form class="login-form" name="form" novalidate>
                 <div class="col-md-6 no-padding">
                     <div class="form-group">
                         <label class="control-label colorwhite">Welcome to Brand Name</label>
@@ -26,7 +26,7 @@
                         <label class="control-label colorwhite">Username</label>
                        <div class="input-group">
                         <span class="input-group-addon brdtxt"><i class="glyphicon glyphicon-user"></i></span>
-                        <input id="email" type="text" class="brd" name="email" placeholder="Email">
+                        <input id="email" type="text" class="brd" name="email" placeholder="Email"  data-ng-model="form.EmailAddress" >
                     </div>
                   
                     </div>
@@ -34,11 +34,11 @@
                         <label class="control-label colorwhite">Password</label>
                         <div class="input-group">
                             <span class="input-group-addon brdtxt"><i class="glyphicon glyphicon-lock"></i></span>
-                            <input id="password" type="password" class="brd" name="password" placeholder="Password">
+                            <input id="password" type="password" class="brd" name="password" placeholder="Password" data-ng-model="form.PassWord">
                         </div>
                     </div>
                     <div class="form-actions">
-                        <button type="submit" class="btn green uppercase">Login</button>                       
+                        <button type="submit" class="btn green uppercase"  data-ng-click="LogIn()" >Login</button>                       
                     </div>  
                     <label class="control-label margin-top-10">
                         <a class="colorwhite" href="#">Need Help in Sign in</a>

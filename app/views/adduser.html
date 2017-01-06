@@ -7,7 +7,7 @@
                 </div>
                 <!-- END SIDEBAR -->
             </div>
-            <div class="page-content-wrapper">
+            <form class="page-content-wrapper" name="userform" novalidate>
 
                 <div class="page-content">
                     <div class="page-bar">
@@ -26,7 +26,7 @@
                                         <label class="control-label">
                                             Company Name
                                         </label>
-                                        <input type="text" class="form-control" id="form_control_1" >
+                                        <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.CompanyName"  >
                                     </div>
                                 </div>
                                 <div class="col-md-12 row">
@@ -41,13 +41,13 @@
                                     <label class="control-label">
                                         Address1
                                     </label>
-                                    <input type="text" class="form-control" id="form_control_1">
+                                    <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.AddressOne">
                                 </div>
                                     <div class="form-group">
                                         <label class="control-label">
                                             Address2
                                         </label>
-                                        <input type="text" class="form-control" id="form_control_1">
+                                        <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.AddressTwo">
                                     </div>
                          
                                 <div class="form-group row">
@@ -55,13 +55,13 @@
                                         <label class="control-label">
                                            City
                                         </label>
-                                        <input type="text" class="form-control" id="form_control_1" >
+                                        <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.City">
                                     </div>
                                     <div class="col-md-6">
                                         <label class="control-label">
                                            State
                                         </label>
-                                        <input type="text" class="form-control" id="form_control_1" >
+                                        <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.State">
                                     </div>
 
                                 </div>
@@ -70,13 +70,13 @@
                                             <label class="control-label">
                                                 Country
                                             </label>
-                                            <input type="text" class="form-control" id="form_control_1" >
+                                            <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.CountryID">
                                         </div>
                                         <div class="col-md-6">
                                             <label class="control-label">
                                                 Zip Code
                                             </label>
-                                            <input type="text" class="form-control" id="form_control_1">
+                                            <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.ZipCode">
                                         </div>
                                     </div>
                             </div>
@@ -95,13 +95,13 @@
                                             <label class="control-label">
                                               First Name
                                             </label>
-                                            <input type="text" class="form-control" id="form_control_1" >
+                                            <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.FirstName">
                                         </div>
                                         <div class="col-md-6">
                                             <label class="control-label">
                                                Last Name
                                             </label>
-                                            <input type="text" class="form-control" id="form_control_1" >
+                                            <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.LastName">
                                         </div>
 
                                     </div>
@@ -110,17 +110,79 @@
                                             <label class="control-label">
                                                 Title
                                             </label>
-                                            <input type="text" class="form-control" id="form_control_1" >
+                                            <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.Title">
                                         </div>
                                         <div class="col-md-6">
                                             <label class="control-label">
                                                Email
                                             </label>
-                                            <input type="text" class="form-control" id="form_control_1" >
+                                            <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.EmailAddress">
                                         </div>
                                     </div>
                                 </div>
-
+                                   <div class="container">
+                            <div class="portlet light">
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label class="control-label">
+                                            Desired Username
+                                        </label>
+                                        <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.Username">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">
+                                            Password
+                                        </label>
+                                        <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">
+                                            Re-enter Password
+                                        </label>
+                                        <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.ReenterPassword">
+                                    </div>
+                                </div>
+                      
+                                <!--<div class="form-group">
+                                  <label class="control-label">
+                                      Company Name
+                                  </label>
+                                  <select class="form-control">
+                                      <option>Organization</option>
+                                      <option>Option 2</option>
+                                      <option>Option 3</option>
+                                      <option>Option 4</option>
+                                      <option>Option 5</option>
+                                  </select>
+                                </div>-->
+                                <div class="col-md-12"></div>
+                                <div class="col-md-4">                      
+                                <div class="form-group">
+                                    <label class="control-label">
+                                        Secret Question
+                                    </label>
+                                    <select class="form-control" data-ng-model="userform.Question">
+                                        <option>Organization</option>
+                                        <option>Option 2</option>
+                                        <option>Option 3</option>
+                                        <option>Option 4</option>
+                                        <option>Option 5</option>
+                                    </select>
+                                </div> 
+                                    <div class="form-group">
+                                        <label class="control-label">
+                                            Answer to Secret Question
+                                        </label>
+                                        <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.Answer">
+                                       
+                                    </div> 
+                                    <div class="form-group">
+                                        <label class="control-label">
+                                            Conform Answer  
+                                        </label>
+                                        <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.Answer">
+                                    </div>
+                                    </div>
 
                                 
                         </div>
@@ -134,7 +196,7 @@
                                            <button type="button" class="btn btn-info pull-left">Cancel</button>
                                       </div>
                                       <div class="col-md-3">
-                                           <button type="button" class="btn btn-info pull-left">Next</button>
+                                           <button type="submit" class="btn btn-info pull-left" ng-click="SaveUser()">Save</button>
                                       </div>
                                       </div>
                                       </div>
@@ -145,7 +207,7 @@
 
              
 
-            </div>
+            </form>
             <!-- END CONTENT BODY -->
         </div>
         </div>
