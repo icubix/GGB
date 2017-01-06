@@ -7,11 +7,15 @@ app.controller('loginCtrl',function($scope,$rootScope,loginFactory){
 
     $rootScope.IsVisible = false;
      $scope.LogIn = function(){
-     	
+
        loginFactory.SaveLogin($scope.form).success(function (resultData) {
             
-    };
+            var test = resultData;
 
-     });       
+            alert(test);
+    }).error(function (errorData) { });;
+
+     };     
+
 
 });
