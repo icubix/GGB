@@ -3,6 +3,7 @@ var app = express();
 var bodyParser = require('body-parser');
 var master = require('./server/masterRouter.js');
 var register = require('./server/registerRouter.js');
+var auth = require('./server/authRouter.js');
 
 app.use(bodyParser.urlencoded({extended : false}));
 app.use(bodyParser.json());
@@ -17,6 +18,7 @@ app.use(express.static('app'));
 
 app.use('/master',master);
 app.use('/register',register);
+app.use('/auth',auth);
 
 
 app.get('/',function(req,res)
