@@ -1,12 +1,20 @@
 var app = angular.module('GGBApp.userCtrl',['GGBApp.addusrFactory']);
-app.controller('userCtrl',function($scope, $rootScope, addUserFactory){
-$rootScope.IsVisible = false;
+app.controller('userCtrl',function($scope, $rootScope, addUserFactory,$location){
+
+ $rootScope.IsVisible = false;
 
  $scope.SaveUser = function(){
+       $scope.userform.RoleID = 1;
        addUserFactory.SaveRegister($scope.userform).success(function (resultData) {
-            var test = resultData;
-
-            $location.path('/product');
+             alert(resultData);
+             if(resultData != "")
+              {
+                $location.path('/product');
+              }
+              else
+              {
+                $location.path('/login');
+              }
     })
     .error(function (errorData) 
     	{ 
@@ -24,7 +32,7 @@ $rootScope.IsVisible = false;
          });
     };
 
- };
+
 
       $scope.GetSecurities = function () {
  
