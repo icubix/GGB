@@ -15,6 +15,20 @@ return{
             })
         },
 
+          GetCountryDetails : function(){
+          var url = urls.apiUrl +'master/getCountries';
+
+            return $http.get(url);
+        },
+
+        GetSecurityDetails : function(){
+          var url = urls.apiUrl +'master/getSecurityQuestions';
+
+            return $http.get(url);
+        },
+
+        
+
 
 };
 
