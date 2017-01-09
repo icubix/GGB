@@ -22,7 +22,7 @@
                                         <div class="form-group margin-top-80">
                                             <div class="device">  Device Number </div>
                                             <div class="deviceform">
-                                                <input type="text" class="form-control" id="form_control_1" data-ng-model="DeviceUDID">
+                                                <input type="text" class="form-control" id="form_control_1" data-ng-model="form.DeviceUDID">
                                             </div>
                                             <div class="col-md-12 margin-top-40">
                                                 <button type="submit" class="btn btn-info center-block width10" ng-click="SearchDevice()">Search</button>
@@ -36,20 +36,33 @@
                             </div>
                         </div>
                     </div>
-                    <div class="rightcheck">                      
+                    <div class="rightcheck">  
+                     <h4 class="colgreen" align="right"> WRS Number: TT/09/WRS/RRB/2016</h4> 
+                             
                             <div class="container">
                                 <div class="col-md-12">
                                     <div class="col-md-12">
                                         <div class="sereslt">
                                             <button type="button" class="btn center-block">Result Set</button>
-                                            <h5>GH9775JHGH8332</h5>
                                         </div>
-                                        
                                     </div>
-                                    <div class="col-md-12 margin-top-40 textcenter">
-                                       <h4 class="colgreen"> WRS Number: TT/09/WRS/RRB/2016</h4>
-                                        <button type="button" class="btn btn-info center-block width10">Sekect</button>
-
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="col-md-12">
+                                        <div class="sereslt">
+                                           <table class="table table-striped">
+                                              <tr>
+                                                <td> Device UDID </td>
+                                                <td> Activation Date</td>
+                                                <td></td>
+                                              </tr>
+                                              <tr ng-repeat="x in Devices">
+                                                <td>{{ x.UDID }}</td>
+                                                <td>{{ x.ActivationDate }}</td>
+                                                <td> <button type="button" class="btn center-block">Select</button></td>
+                                              </tr>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
