@@ -13,6 +13,7 @@ connection.connect();
 var register = function(){};
 
 register.prototype.Registration = function(req,res){
+	console.log("success");
 	var query = "insert into tblusers(UserName,PassWord,EmailAddress,FirstName,LastName,MobileNumber,Title,isActive) values (" +
 				"'" + req.body.UserName + "'," +
 				"'" + req.body.PassWord + "'," +

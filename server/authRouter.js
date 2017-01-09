@@ -14,7 +14,8 @@ app.use(bodyParser.json());
 
 router.use(cors());
 
-router.post('/validate',function(req,res){
+router.post('/ValidateLogin',function(req,res){
+	console.log("aa");
 	 var data = auth.ValidateLogin(req,res);
 	 return data;
 });

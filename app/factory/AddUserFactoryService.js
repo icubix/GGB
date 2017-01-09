@@ -7,7 +7,7 @@ return{
 	 	
 	 	//alert(data);
             return $http({
-                url: urls.apiUrl +'master/Registration',
+                url: urls.apiUrl +'register/Registration',
                 method: "POST",
                // data: '=' + encodeURIComponent(JSON.stringify(data)),
                data: data,

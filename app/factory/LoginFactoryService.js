@@ -4,7 +4,7 @@ return{
 	 SaveLogin: function (data) {
 	 	alert(data);
             return $http({
-                url: urls.apiUrl +'master/ValidateLogin',
+                url: urls.apiUrl +'auth/ValidateLogin',
                 method: "POST",
               //  data: '=' + encodeURIComponent(JSON.stringify(data)),
                data: data

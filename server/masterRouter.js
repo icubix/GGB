@@ -14,6 +14,7 @@ app.use(bodyParser.json());
 router.use(cors());
 
 router.get('/getCountries',function(req,res){
+	console.log("country");
 	 var data = master.getCountries(req,res);
 	 return data;
 });

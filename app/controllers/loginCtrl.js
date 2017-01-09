@@ -10,6 +10,8 @@ app.controller('loginCtrl',function($scope,$rootScope,loginFactory){
 
        loginFactory.SaveLogin($scope.form).success(function (resultData) {
             
+            var test = resultData;
+            alert(test);
           $location.path('/product');
     }).error(function (errorData) { });;
 
