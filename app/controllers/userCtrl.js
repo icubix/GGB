@@ -15,6 +15,33 @@ $rootScope.IsVisible = true;
 
      };     
 
+  $scope.GetCountries = function () {
+  
+            addUserFactory.GetCountryDetails().success(function (resultData) {
+            $scope.CountryListData = resultData;
+        })
+        .error(function (errorData) {
+            console.log(errorData);
+         });
+    };
 
+
+      $scope.GetSecurities = function () {
+ 
+            addUserFactory.GetSecurityDetails().success(function (resultData) {
+            $scope.SecutiryList = resultData;
+            alert(resultData)
+        })
+        .error(function (errorData) {
+            console.log(errorData);
+         });
+    };
+
+   
+    (function () {
+         
+        $scope.GetCountries();
+        $scope.GetSecurities();
+         })();
 
 });
