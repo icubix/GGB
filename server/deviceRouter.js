@@ -15,6 +15,7 @@ app.use(bodyParser.json());
 router.use(cors());
 
 router.post('/GetDevices',function(req,res){
+	console.log("aa");
 	 var data = device.GetDevices(req,res);
 	 return data;
 });

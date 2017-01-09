@@ -1,8 +1,26 @@
-var app = angular.module('GGBApp.checkCtrl',[]);
+var app = angular.module('GGBApp.checkCtrl',['GGBApp.chkFactory']);
 console.log("chheck testing");
-app.controller('checkCtrl',function($scope,$rootScope){
+app.controller('checkCtrl',function($scope,$rootScope,checkFactory){
 $rootScope.IsVisible = true;
-//alert("Login controlloer calling");
+
+
+ $scope.SearchDevice = function(){
+
+       checkFactory.SearchDevices($scope.DeviceUDID).success(function (resultData) {
+            
+            var test = resultData;
+            alert(test);
+          //$location.path('/product');
+    }).error(function (errorData) { });;
+
+     };    
+
+
+ 
+    // (function () {
+         
+     
+    //      })();
 
 
 });

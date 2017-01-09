@@ -13,7 +13,9 @@ connection.connect();
 var device = function(){};
 
 device.prototype.GetDevices = function(req,res){
+	console.log(req.body);
 	var query = "select * from tblDevice where UDID LIKE '%" + req.body.DeviceUDID +"%'";
+	console.log(query);
 	connection.query(query,function(err,result){
 		if(err)
 		{

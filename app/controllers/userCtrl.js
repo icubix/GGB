@@ -38,7 +38,7 @@ app.controller('userCtrl',function($scope, $rootScope, addUserFactory,$location)
  
             addUserFactory.GetSecurityDetails().success(function (resultData) {
             $scope.SecutiryList = resultData;
-            alert(resultData)
+           
         })
         .error(function (errorData) {
             console.log(errorData);
