@@ -30,7 +30,7 @@ $rootScope.IsVisible = true;
  
             addUserFactory.GetSecurityDetails().success(function (resultData) {
             $scope.SecutiryList = resultData;
-            alert(resultData)
+           
         })
         .error(function (errorData) {
             console.log(errorData);
