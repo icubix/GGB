@@ -1,20 +1,17 @@
 var app = angular.module('GGBApp.userCtrl',['GGBApp.addusrFactory']);
-console.log("user testing");
 app.controller('userCtrl',function($scope, $rootScope, addUserFactory){
-$rootScope.IsVisible = true;
-//alert("Login controlloer calling");
+$rootScope.IsVisible = false;
 
  $scope.SaveUser = function(){
-
        addUserFactory.SaveRegister($scope.userform).success(function (resultData) {
-            
             var test = resultData;
-            alert(test);
-          $location.path('/product');
-    }).error(function (errorData) { });;
+            $location.path('/product');
+    })
+    .error(function (errorData) 
+    	{ 
+    		console.log(errorData);
+    	});;
 
-     };     
-
-
+ };
 
 });
