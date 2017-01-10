@@ -24,7 +24,7 @@ $rootScope.IsVisible = false;
          });
     };
 
- };
+ //};
 
       $scope.GetSecurities = function () {
  

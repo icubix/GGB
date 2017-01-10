@@ -9,7 +9,7 @@ $rootScope.IsVisible = true;
        checkFactory.SearchDevices($scope.DeviceUDID).success(function (resultData) {
             
             var test = resultData;
-            alert(test);
+            // alert(test);
           //$location.path('/product');
     }).error(function (errorData) { });;
 
