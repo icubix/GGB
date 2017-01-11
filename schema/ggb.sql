@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 06, 2017 at 11:55 AM
+-- Generation Time: Jan 11, 2017 at 03:19 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.5.38
 
@@ -43,7 +43,14 @@ CREATE TABLE `tbladdress` (
 --
 
 INSERT INTO `tbladdress` (`AddressID`, `Addressone`, `addresstwo`, `city`, `state`, `countryID`, `zipcode`, `Phone`, `fax`) VALUES
-(5, 'Flat No:402, Sri Vinayaka Residency', 'Bhavani puram', 'Hyderabad', 'HYD', 1, '580024', '001 225 603 7842', '87985587');
+(11, 'Flat No: 402, Andey Villa', 'Shanthipuram', 'Vizag', 'Visakhapatnam', 2, '530016', '9849796848', '9125684'),
+(12, 'Flat No: 402, Andey Villa', 'Shanthipuram', 'Vizag', 'Visakhapatnam', 2, '530016', '9849796848', '9125684'),
+(13, 'Flat No: 402', 'Andey Villa, Shanthipuram', 'vizag', 'Andhra Pradesh', 2, '530016', '9849796848', '92684558'),
+(14, 'Flat No: 402', 'Andey Villa, Shanthipuram', 'vizag', 'Andhra Pradesh', 2, '530016', '9849796848', '92684558'),
+(15, 'undefined', 'undefined', 'undefined', 'undefined', 0, 'undefined', 'undefined', 'undefined'),
+(16, 'undefined', 'undefined', 'undefined', 'undefined', 0, 'undefined', 'undefined', 'undefined'),
+(17, 'undefined', 'undefined', 'undefined', 'undefined', 0, 'undefined', 'undefined', 'undefined'),
+(18, 'Flat No:402', 'Andey Villa, Shanthipuram', 'Vizag', 'Andhrapradesh', 2, '53016', '9849796848', '96584785');
 
 -- --------------------------------------------------------
 
@@ -62,7 +69,14 @@ CREATE TABLE `tblcompany` (
 --
 
 INSERT INTO `tblcompany` (`companyid`, `companyname`, `userid`) VALUES
-(4, 'iCubix', 25);
+(10, 'icubix', 36),
+(11, 'icubix', 37),
+(12, 'Active Dimensions', 38),
+(13, 'Active Dimensions', 39),
+(14, 'undefined', 40),
+(15, 'undefined', 41),
+(16, 'undefined', 42),
+(17, 'Active Dimensions', 43);
 
 -- --------------------------------------------------------
 
@@ -81,7 +95,14 @@ CREATE TABLE `tblcompanyaddress` (
 --
 
 INSERT INTO `tblcompanyaddress` (`ID`, `CompanyID`, `AddressID`) VALUES
-(4, 4, 5);
+(10, 10, 11),
+(11, 11, 12),
+(12, 12, 13),
+(13, 13, 14),
+(14, 14, 15),
+(15, 15, 16),
+(16, 16, 17),
+(17, 17, 18);
 
 -- --------------------------------------------------------
 
@@ -225,6 +246,15 @@ CREATE TABLE `tblroles` (
   `isActive` bit(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `tblroles`
+--
+
+INSERT INTO `tblroles` (`RoleID`, `RoleName`, `isActive`) VALUES
+(4, 'Admin', b'1'),
+(5, 'User', b'1'),
+(6, 'Guest', b'1');
+
 -- --------------------------------------------------------
 
 --
@@ -258,7 +288,14 @@ CREATE TABLE `tbluserroles` (
 --
 
 INSERT INTO `tbluserroles` (`UserID`, `RoleID`, `ID`) VALUES
-(25, 1, 13);
+(36, 1, 19),
+(37, 1, 20),
+(38, 1, 21),
+(39, 1, 22),
+(40, 1, 23),
+(41, 1, 24),
+(42, 1, 25),
+(43, 1, 26);
 
 -- --------------------------------------------------------
 
@@ -285,7 +322,14 @@ CREATE TABLE `tblusers` (
 --
 
 INSERT INTO `tblusers` (`UserID`, `UserName`, `FirstName`, `LastName`, `PassWord`, `Title`, `WRSNo`, `EmailAddress`, `MobileNumber`, `CreateDate`, `isActive`) VALUES
-(25, 'Kalidasu', 'Kali', 'Surada', 'test@1234', 'Mr.Jaffa', '', 'Kalidasu.Surada@gmail.com', '9849796848', '2017-01-06 10:11:10', b'1');
+(36, 'Kalidasu', 'Kalidasu', 'Surada', 'test@123', 'Mr.Kalidasu Surada', '', 'Kalidasu.Surada@gmail.com', 'undefined', '2017-01-09 20:45:35', b'1'),
+(37, 'Kalidasu', 'Kalidasu', 'Surada', 'test@123', 'Mr.Kalidasu Surada', '', 'Kalidasu.Surada@gmail.com', 'undefined', '2017-01-09 20:45:37', b'1'),
+(38, 'vamci', 'Vamci', 'Surada', 'test@123', 'Mr. Vamsi Surada', '', 'vamci.surada@gmail.com', 'undefined', '2017-01-09 20:47:29', b'1'),
+(39, 'vamci', 'Vamci', 'Surada', 'test@123', 'Mr. Vamsi Surada', '', 'vamci.surada@gmail.com', 'undefined', '2017-01-09 20:47:32', b'1'),
+(40, 'undefined', 'undefined', 'undefined', 'undefined', 'undefined', '', 'undefined', 'undefined', '2017-01-09 20:48:04', b'1'),
+(41, 'undefined', 'undefined', 'undefined', 'undefined', 'undefined', '', 'undefined', 'undefined', '2017-01-09 20:48:27', b'1'),
+(42, 'undefined', 'undefined', 'undefined', 'undefined', 'undefined', '', 'undefined', 'undefined', '2017-01-09 21:09:57', b'1'),
+(43, 'gyan', 'Gyan', 'Surada', 'test@123', 'Mr. Gyan', '', 'gyan@gmail.com', 'undefined', '2017-01-10 08:54:06', b'1');
 
 -- --------------------------------------------------------
 
@@ -301,6 +345,21 @@ CREATE TABLE `tblusersecurityquestions` (
   `isActive` bit(1) NOT NULL,
   `CreatedDate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tblusersecurityquestions`
+--
+
+INSERT INTO `tblusersecurityquestions` (`ID`, `UserID`, `QuestionID`, `Answer`, `isActive`, `CreatedDate`) VALUES
+(1, 35, 5, 'test', b'1', '2017-01-09 20:42:04'),
+(2, 36, 1, 'vamci', b'1', '2017-01-09 20:45:35'),
+(3, 37, 1, 'vamci', b'1', '2017-01-09 20:45:38'),
+(4, 38, 5, 'test', b'1', '2017-01-09 20:47:30'),
+(5, 39, 5, 'test', b'1', '2017-01-09 20:47:33'),
+(6, 40, 0, 'undefined', b'1', '2017-01-09 20:48:04'),
+(7, 41, 0, 'undefined', b'1', '2017-01-09 20:48:27'),
+(8, 42, 0, 'undefined', b'1', '2017-01-09 21:09:57'),
+(9, 43, 1, 'gyan', b'1', '2017-01-10 08:54:06');
 
 -- --------------------------------------------------------
 
@@ -421,17 +480,17 @@ ALTER TABLE `tblvalidate`
 -- AUTO_INCREMENT for table `tbladdress`
 --
 ALTER TABLE `tbladdress`
-  MODIFY `AddressID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `AddressID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `tblcompany`
 --
 ALTER TABLE `tblcompany`
-  MODIFY `companyid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `companyid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT for table `tblcompanyaddress`
 --
 ALTER TABLE `tblcompanyaddress`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT for table `tblcountries`
 --
@@ -466,7 +525,7 @@ ALTER TABLE `tblresourcetable`
 -- AUTO_INCREMENT for table `tblroles`
 --
 ALTER TABLE `tblroles`
-  MODIFY `RoleID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `RoleID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `tblsso`
 --
@@ -476,17 +535,17 @@ ALTER TABLE `tblsso`
 -- AUTO_INCREMENT for table `tbluserroles`
 --
 ALTER TABLE `tbluserroles`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT for table `tblusers`
 --
 ALTER TABLE `tblusers`
-  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 --
 -- AUTO_INCREMENT for table `tblusersecurityquestions`
 --
 ALTER TABLE `tblusersecurityquestions`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `tblvalidate`
 --
