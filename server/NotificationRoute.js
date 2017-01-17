@@ -16,12 +16,12 @@ router.use(cors());
 
 router.post('/trackIssueDetails',function(req,res){
 	console.log("aa");
-	 var data = auth.trackIssueDetails(req,res);
+	 var data = notification.trackIssueDetails(req,res);
 	 return data;
 });
 
 router.post('/getIssueDetails',function(req,res){
-	var data = auth.getIssueDetails(req,res);
+	var data = notification.ShowEmails(req,res);
 	return data;
 })
 

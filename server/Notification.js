@@ -17,7 +17,7 @@ Notification.prototype.trackIssueDetails = function(req,res){
 	var query = "insert into tblIssueDetails(CompanyID,IssueDetails,RaisedBy) values(" +
 				"'" + req.body.CompanyID + "'," +
 				"'" + req.body.IssueDetails + "'," +
-				"'" + req.body.UserID + "'" +
+				"'" + req.body.RaisedBy + "'" +
 				")";
 
 	console.log(query);
@@ -28,21 +28,22 @@ Notification.prototype.trackIssueDetails = function(req,res){
 		}
 		else
 		{
-			SentEmailDetails(req.body.FromEmailAddress,req.body.ToEmailAddress,req.body.AssignedTo,req.body.UserID,req.body.Subject,req.body.Body);
+			SentEmailDetails(req.body.FromEmailAddress,req.body.ToEmailAddress,req.body.AssignedTo,req.body.RaisedBy,req.body.Subject,req.body.Body);
 			return res.json(result);
 		}
 	});
 };
 
 function SentEmailDetails(FromEmailAddress,ToEmailAddress,AssignedTo,AssignedBy,Subject,Body){
-	var query = "insert into tblEmailDetails(AssignedTo,AssignedBy,Body,From,To,Subject) values(" +
+	var query = "insert into tblEmailDetails(AssignedTo,AssignedBy,Body,FromAddress,ToAddress,Subject) values(" +
 				"'" + AssignedTo + "'," +
 				"'" + AssignedBy + "'," +
 				"'"	+ Body + "'," +
-				"'" + From + "'," +
-				"'" + To + "'," + 
+				"'" + FromEmailAddress + "'," +
+				"'" + ToEmailAddress + "'," + 
 				"'" + Subject + "'" +
 				")";
+	console.log(query);
 	connection.query(query,function(err,result){
 		if(err)
 		{
