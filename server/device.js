@@ -14,7 +14,7 @@ var device = function(){};
 
 device.prototype.GetDevices = function(req,res){
 	console.log(req.body);
-	var query = "select * from tblDevice where UDID LIKE '%" + req.body.DeviceUDID +"%'";
+	var query = "select * from tblDevice";
 	console.log(query);
 	connection.query(query,function(err,result){
 		if(err)
@@ -48,7 +48,12 @@ device.prototype.getDevice = function(req,res){
 device.prototype.updateMachineDetails = function(req,res){
 	var query = "update tblMachineDetails set EngineNumber = '" + req.body.EngineNumber + "', " +
 				"MachineNumber = '" + req.body.MachineNumber + "', " +
-				"RFID = '" + req.body.RFID + "' " +
+				"RFID = '" + req.body.RFID + "', " +
+				"Make = '" + req.body.Make +"', " +
+				"Model = '" + req.body.Model +"', " +
+				"Type = '" + req.body.Type +"', " +
+				"TypeOfMachine = '" + req.body.TypeOfMachine +"', " +
+				"Year = '" + req.body.Year +"'" +
 				"where DeviceID = '" + req.body.UDID + "'";
 	console.log(query);
 	connection.query(query,function(err,result){
@@ -58,7 +63,108 @@ device.prototype.updateMachineDetails = function(req,res){
 		}
 		else
 		{
+			updateResourceTable(AllocationDate,ExpiryDate,RegulationValueOne,RegulationValueTwo,UserID);
 			return res.json(result);
+		}
+	});
+}
+
+function updateResourceTable(AllocationDate,ExpiryDate,RegulationValueOne,RegulationValueTwo,UserID){
+	var query = "update tblResourcetable set ExpiryDate = '" + ExpiryDate + "'," +
+				"AllocationDate = '" + AllocationDate + "'," +
+				"RegulationValueOne = '" + RegulationValueOne + "'," +
+				"RegulationValueTwo = '" + RegulationValueTwo + "' " +
+				"where UserID = '" + UserID + "'";
+
+
+
+	connection.query(query,function(err,result){
+		if(err)
+		{
+			console.log(err);
+		}
+		else
+		{
+			console.log(result.insertId);
+		}
+	});
+
+}
+
+device.prototype.saveMachineDetails = function(req,res){
+	var query = "insert into tblDevice(UDID,WRSNo,ActivationDate,isActive) values('" +
+				      req.body.UDID + "'," +
+				"'" + req.body.WRSNo + "'," +
+				"'" + req.body.ActivationDate + "'," +
+					+ 1 +
+				")";
+	console.log(query);
+	connection.query(query,function(err,result){
+		if(err)
+		{
+			console.log(err);
+		}
+		else
+		{
+			AddMachineDtls(req.body.UDID,req.body.EngineNumber,req.body.MachineNumber,req.body.Make,req.body.Model,req.body.RFID,req.body.Type,req.body.TypeOfMachine,req.body.Year,
+						   req.body.AllocationDate,
+						   req.body.ExpiryDate,
+						   req.body.RegulationValueOne,
+						   req.body.RegulationValueTwo,
+						   req.body.UserID,
+						   req.body.WRSNo);
+			return res.json(result);
+		}
+	});
+}
+
+function AddMachineDtls(UDID,EngineNumber,MachineNumber,Make,Model,RFID,Type,TypeOfMachine,Year,AllocationDate,ExpiryDate,RegulationValueOne,RegulationValueTwo,UserID,WRSNo){
+	var query = "insert into tblmachinedetails(DeviceID,EngineNumber,MachineNumber,Make,Model,RFID,Type,TypeOfMachine,Year) values(" +
+				"'" + UDID + "'," +
+				"'" + EngineNumber + "'," +
+				"'" + MachineNumber + "'," +
+				"'" + Make + "'," +
+				"'" + Model + "'," +
+				"'" + RFID + "'," +
+				"'" + Type + "'," +
+				"'" + TypeOfMachine + "'," +
+				"'" + Year + "'" + 
+				")";
+
+	connection.query(query,function(err,result){
+		if(err)
+		{
+			console.log(err);
+		}
+		else
+		{
+			AddRenewalDtls(AllocationDate,ExpiryDate,RegulationValueOne,RegulationValueTwo,UserID,WRSNo);
+			console.log(result.insertId);
+		}
+	});
+
+}
+
+
+function AddRenewalDtls(AllocationDate,ExpiryDate,RegulationValueOne,RegulationValueTwo,UserID,WRSNo){
+	var query = "insert into tblResourcetable(AllocationDate,ExpiryDate,RegulationValueOne,RegulationValueTwo,UserID,WRSNo) values(" +
+				"'" + AllocationDate + "'," +
+				"'" + ExpiryDate + "'," +
+				"'" + RegulationValueOne + "'," +
+				"'" + RegulationValueTwo + "'," +
+				"'" + UserID + "'," +
+				"'" + WRSNo + "'" +
+				")";
+	connection.query(query,function(err,result){
+		if(err)
+		{
+			console.log(err);
+		}
+		else
+		{
+			//AddRenewalDtls(AllocationDate,ExpiryDate,RegulationValueOne,RegulationValueTwo,UserID,WRSNo);
+			//return res.json(result);
+			console.log(result.insertId);
 		}
 	});
 }
