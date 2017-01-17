@@ -126,6 +126,7 @@ function AddCompanyAddress(CompanyID,AddressID)
 				"'" + CompanyID + "'," +
 				"'" + AddressID + "'" +
 				")";
+	console.log(query);
 
 	connection.query(query,function(err,result){
 		if(err)
@@ -146,9 +147,9 @@ function AddSecurityQuestions(UserID,QuestionID,Answer)
 				"'" + UserID + "'," +
 				"'" + QuestionID + "'," +
 				"'" + Answer + "'," +
-				 1 + "," +
+				 1 + 
 				")";
-
+	console.log(query);
 	connection.query(query,function(err,result){
 		if(err)
 		{

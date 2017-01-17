@@ -20,7 +20,7 @@ app.config(function($routeProvider) {
     templateUrl:'views/check.html',
     controller:'checkCtrl'
   })
-  .when('/device',{
+  .when('/device/:ID',{
     templateUrl:'views/additionaldevice.html',
     controller:'deviceCtrl'
   })
