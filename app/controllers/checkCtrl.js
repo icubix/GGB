@@ -72,13 +72,12 @@ $rootScope.showSecurity = false;
 		
 
           
-<<<<<<< HEAD
 
-    }).error(function (errorData) { });;
-=======
+
+    //}).error(function (errorData) { });;
+
     };    
 
->>>>>>> 2c8e9b278eee014295ad180dfdcf73a2bcad909a
 
     function bindData()
     {

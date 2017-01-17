@@ -36,5 +36,10 @@ router.post('/sendActivationCode',function(req,res){
 	return data;
 })
 
+router.post('/saveMachineDetails',function(req,res){
+	var data = device.saveMachineDetails(req,res);
+	return data;
+})
+
 
 module.exports = router;

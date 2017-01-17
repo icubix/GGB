@@ -13809,6 +13809,9 @@ body[ng-controller] .modal {
     content: " ";
     display: table
 }
+.fontbold{
+    font-weight: 600!important
+}
 .table.table-full-width {
     width: 100%!important
 }
@@ -13819,7 +13822,7 @@ body[ng-controller] .modal {
 }
 .table thead tr th {
     font-size: 14px;
-    font-weight: 600
+    font-weight: 400
 }
 .table-advance {
     margin-bottom: 10px!important
@@ -20538,4 +20541,9 @@ body[ng-controller] .modal {
     border-top: 1px solid #eee;
     padding: 10px;
     text-align: center
+}
+
+
+.table{ 
+text-align:left!important;
 }

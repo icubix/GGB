@@ -8,6 +8,57 @@
 .no-lf{
 	padding-left:0px!important;
 }
+.margin-right-94{
+    margin-right:94px;
+
+}
+.devbg{
+    border:1px solid #ccc;
+    background: #e2e2e2;
+}
+.hero{
+position: relative;
+    background-color: #4c5c76;
+    /* height: 30px; */
+    /* width: 131px; */
+    text-align: center;
+    color: #fff;
+    font-size: 17px;
+    line-height: 27px;
+    display: inline-block;
+    padding: 3px 7px;
+    left: 22px;
+    top: 14px;
+}
+
+.eo> tr:nth-child(even){
+  background-color: #efefef;
+}
+.eo> tr:nth-child(odd){
+  background-color: #e0e0e0;
+}
+.tbtop{
+        width: 100%;
+    margin-bottom: 0px;
+    margin-top: 20px;
+}
+.hero:after{
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: 80px;
+    /* margin-left: -80px; */
+    width: 0;
+    height: 0;
+    border-top: solid 15px #4c5c76;
+    border-left: solid 15px transparent;
+    border-right: solid -80px transparent;
+    z-index: 1000;
+    -ms-transform: rotate(7deg);
+    -webkit-transform: rotate(7deg);
+    transform: rotate(7deg);
+    text-align: left;
+}
 
 @media print {
     body {

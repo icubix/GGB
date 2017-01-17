@@ -20,7 +20,7 @@ router.post('/ValidateLogin',function(req,res){
 	 return data;
 });
 
-router.post('/resetpassword',function(req,res){
+router.post('/ResetPassword',function(req,res){
 	var data = auth.ResetPassword(req,res);
 	return data;
 })

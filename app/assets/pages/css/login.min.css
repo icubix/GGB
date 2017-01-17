@@ -8,6 +8,22 @@
     margin-top:10px;
     
 }
+.text-center{
+    text-align: center!important;
+}
+.contentft{
+    background-color: #1a1e29;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+    border-radius: 7px;
+    width: 420px;
+    margin: 150px auto 10px;
+    padding: 50px 20px 36px 20px;
+    overflow: hidden;
+    position: relative;
+   }
 .colorwhite{
     color:#fff;
 }
@@ -22,7 +38,7 @@
     -o-border-radius: 7px;
     border-radius: 7px;
     width: 623px;
-    margin: 180px auto 10px;
+    margin: 150px auto 10px;
     padding:50px 20px 36px 20px;
     overflow: hidden;
     position: relative;

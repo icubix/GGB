@@ -4,9 +4,8 @@ app.controller('deviceCtrl',function($scope,$rootScope,$routeParams,deviceFactor
 $rootScope.IsVisible = true;
 //alert("Login controlloer calling");
 
-// var testid = $routeParams.ID;
-// alert(testid);
- $scope.GetDevice = function(){
+
+ $scope.GetDevice = function(uuID){
 
        deviceFactory.GetDevice($scope.form).success(function (resultData) {
             $scope.Devices = resultData;
@@ -14,6 +13,14 @@ $rootScope.IsVisible = true;
 
     }).error(function (errorData) { });;
 
-     };    
+     };   
+
+
+     (function()
+     {
+     	var uuId = $routeParams.ID;
+     	$scope.GetDevice(uuId);
+     })(); 
+
 });
 

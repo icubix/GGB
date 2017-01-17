@@ -4,7 +4,11 @@ var app = angular.module('GGBApp',['ngRoute','GGBApp.loginCtrl',
                                              'GGBApp.notificationCtrl',
                                              'GGBApp.productCtrl',
                                              'GGBApp.securityCtrl',
-                                             'GGBApp.userCtrl']);
+                                             'GGBApp.userCtrl',
+                                               'GGBApp.forgotCtrl',
+                                                 'GGBApp.resetCtrl',
+                                                 'GGBApp.addeviceCtrl'
+                                             ]);
 console.log('test ing ckali');
 app.config(function($routeProvider) {
   $routeProvider
@@ -36,5 +40,21 @@ app.config(function($routeProvider) {
     templateUrl:'views/securitydetails.html',
     controller:'securityCtrl'
   })
-  .otherwise({redirectTo: '/login'});
+  //  .when('/forgot',{
+  //   templateUrl:'views/forgotpassword.html',
+  //   controller:'forgotCtrl'
+  // })
+   .when('/reset',{
+    templateUrl:'views/resetpassword.html',
+    controller:'resetCtrl'
+  })
+    .when('/adddevice',{
+    templateUrl:'views/adddevice.html',
+    controller:'addeviceCtrl'
+  })
+   .when('/forgot',{
+    templateUrl:'views/forgotpassword.html',
+    controller:'forgotCtrl'
+  })
+  .otherwise({redirectTo: '/forgotp'});
 });
