@@ -43,11 +43,7 @@ app.config(function($routeProvider) {
     templateUrl:'views/securitydetails.html',
     controller:'securityCtrl'
   })
-  //  .when('/forgot',{
-  //   templateUrl:'views/forgotpassword.html',
-  //   controller:'forgotCtrl'
-  // })
-   .when('/reset',{
+ .when('/reset/:ID',{
     templateUrl:'views/resetpassword.html',
     controller:'resetCtrl'
   })

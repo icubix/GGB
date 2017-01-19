@@ -28,7 +28,7 @@ var Email = function(){};
 
 Email.prototype.sendEmail = function(req,res){
 
-	var text = 'http://localhost:2424/#/reset/';
+	var text = 'http://localhost:2424/#/reset/43';
 
 	console.log(req.body.EmailAddress);
 

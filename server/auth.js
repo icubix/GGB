@@ -35,7 +35,7 @@ function UpdateSSO(UserID)
 }
 
 auth.prototype.ResetPassword = function(req,res){
-	var query = "update tblusers set PassWord = '" + req.body.PassWord + "'" + " where UserName = '" + req.body.UserName +"'";
+	var query = "update tblusers set PassWord = '" + req.body.PassWord + "'" + " where UserID = '" + req.body.userID +"'";
 	connection.query(query,function(err,result){
 		if(err)
 		{

@@ -1,18 +1,26 @@
 var app = angular.module('GGBApp.resetCtrl',['GGBApp.rstFactory']);
 console.log("testing iunfo");
-app.controller('resetCtrl',function($scope,$rootScope,resetFactory){
+app.controller('resetCtrl',function($scope,$rootScope,resetFactory,$routeParams){
 
 /*    $rootScope.IsVisible = false;
        */    
 
-       $scope.Reset = function () {
-      alert("a");
-            resetFactory.SendRestInfoDetails($scope.resetForm).success(function (resultData) {
-            $scope.CountryListData = resultData;
-        })
-        .error(function (errorData) {
-            console.log(errorData);
-         });
+      var userID = $routeParams.ID;
+      // alert(userID);
+      // $scope.resetForm.userID = userID;
+
+      $scope.Reset = function() {
+            console.log($scope.resetForm);
+            //$scope.resetForm.userID = uuId;
+        //     resetFactory.SendRestInfoDetails($scope.resetForm).success(function (resultData) {
+        //     $scope.CountryListData = resultData;
+        // })
+        // .error(function (errorData) {
+        //     console.log(errorData);
+        //  });
     };
+
+    
+
 
 });
