@@ -52,8 +52,8 @@ app.config(function($routeProvider) {
     controller:'addeviceCtrl'
   })
    .when('/forgot',{
-    templateUrl:'views/forgotpassword.html',
+    templateUrl:'views/forgot.html',
     controller:'forgotCtrl'
   })
-  .otherwise({redirectTo: '/forgotp'});
+  .otherwise({redirectTo: '/forgot'});
 });

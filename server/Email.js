@@ -19,7 +19,21 @@ var transporter = nodemailer.createTransport({
         }
     });
 
+function getUserId(emailAddress,res){
 
+var query = "select * from tblusers where EmailAddress = '" + emailAddress + "'";
+connection.query(query,function(err,result){
+        if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
+           console.log(result);
+            return result;
+        }
+});
+};
 // send mail with defined transport object
 
 
@@ -27,8 +41,24 @@ var transporter = nodemailer.createTransport({
 var Email = function(){};
 
 Email.prototype.sendEmail = function(req,res){
+   
 
-	var text = 'http://localhost:2424/#/reset/43';
+    //var result = getUserId(req.body.EmailAddress);
+    var query = "select UserID from tblusers where EmailAddress = '" + req.body.EmailAddress + "'";
+  //  console.log(UserID);
+
+    connection.query(query,function(err,result){
+        if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
+           console.log(result);
+            return result;
+  
+
+	var text = 'http://localhost:2424/#/reset/ ' +  result.UserID ;
 
 	console.log(req.body.EmailAddress);
 
@@ -47,7 +77,9 @@ Email.prototype.sendEmail = function(req,res){
 	    }
     	console.log('Message sent: ' + info.response);
 	});
-
+  }
+ });
+    
 };
 
 

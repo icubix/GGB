@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 router.use(cors());
 
 router.post('/sendEmail',function(req,res){
-	console.log("aa");
+	
 	 var data = email.sendEmail(req,res);
 	 return data;
 });
