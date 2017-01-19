@@ -5,11 +5,14 @@ var app = angular.module('GGBApp',['ngRoute','GGBApp.loginCtrl',
                                              'GGBApp.productCtrl',
                                              'GGBApp.securityCtrl',
                                              'GGBApp.userCtrl',
-                                               'GGBApp.forgotCtrl',
-                                                 'GGBApp.resetCtrl',
-                                                 'GGBApp.addeviceCtrl'
+                                             'GGBApp.forgotCtrl',
+                                             'GGBApp.resetCtrl',
+                                             'GGBApp.addeviceCtrl'
                                              ]);
+
+
 console.log('test ing ckali');
+
 app.config(function($routeProvider) {
   $routeProvider
   .when('/login',{

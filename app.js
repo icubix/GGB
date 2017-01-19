@@ -6,6 +6,7 @@ var register = require('./server/registerRouter.js');
 var auth = require('./server/authRouter.js');
 var device = require('./server/deviceRouter.js');
 var notification = require('./server/NotificationRoute.js');
+var email = require('./server/EmailRouter.js');
 
 
 app.use(bodyParser.urlencoded({extended : false}));
@@ -24,6 +25,7 @@ app.use('/register',register);
 app.use('/auth',auth);
 app.use('/device',device);
 app.use('/notification',notification);
+app.use('/email',email);
 
 
 
