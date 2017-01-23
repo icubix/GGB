@@ -1,53 +1,207 @@
-﻿
-        <div class="page-container">
-            <!-- BEGIN SIDEBAR -->
-            <div class="page-sidebar-wrapper">
-                <div class="page-sidebar navbar-collapse collapse sidebar">
+<link href="../assets/global/css/datatables.min.css" rel="stylesheet" />
+<div class="page-container">
+    <!-- BEGIN SIDEBAR -->
+    <div class="page-sidebar-wrapper">
+        <div class="page-sidebar navbar-collapse collapse sidebar">
 
-                </div>
-                <!-- END SIDEBAR -->
-            </div>
-            <div class="page-content-wrapper">
-                <div class="page-content">
-                    <h4 class="page-title margin-top-50"></h4>
-                    <div class="leftcheck">
+        </div>
+        <!-- END SIDEBAR -->
+    </div>
+    <div class="page-content-wrapper">
+        <div class="page-content">
+            <h4 class="page-title margin-top-50"></h4>
+          
+              
+                    <div class="container">
                         <div class="row">
-                            <div class="container">
-                                <div class="portlet light">
-                                    <div class="notleft">                                        
-                                            <h4>Message Center</h4>
-                                            <div class="col-md-12">
-                                                <h5>Subject</h5>
-                                                <input type="text" class="form-control">
-                                                <p>text of the printing </p>
-                                            </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                           <hr class="blueline">
-                                                </div>
-                                        </div>                                        
+                            <div class="portlet light">
+                                <div class="notleft">
+                                    <h4>Message Center</h4>
+                                    <div class="col-md-12">
+                                        <h5>Subject</h5>
+                                        <input type="text" class="form-control">
+                                        <p>text of the printing </p>
+                                    </div>
+                                    <div class="row">
                                         <div class="col-md-12">
-                                            <h5>Message Type</h5>                                    
-                                            
+                                            <hr class="blueline">
                                         </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h5>Message Type</h5>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <span class="color-blue">Select All</span>
+                                        <span class="color-blue pull-right">Select Name</span>
+                                    </div>
+                                    <div class="col-md-12 not_button margin-top-20">
+                                        <div class="btn_blue">
+                                            <input type="checkbox" class="checkbx">
+                                            <label>Notification</label>
+                                        </div>
+                                        <div class="not_grey margin-top-20">
+                                            <input type="checkbox" class="checkbx">
+                                            <label>Notification</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="col-md-12">
-                                            <span class="color-blue">Select All</span>
-                                            <span  class="color-blue">Select Name</span>
+                                            <hr class="blueline">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h5>Message Status</h5>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="checkbox">
+                                            <label>Unread</label>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="checkbox">
+                                            <label>Read</label>
 
                                         </div>
                                     </div>
-                              
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <hr class="blueline">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button type="button" class="btn btn-default">Filter Message</button>
+
+                                    </div>
+
+
+
+                                </div>
+                                <div class="notrght">
+                                    <div class="page-content">
+                                        <div class="clearfix"> </div>
+                                        <!--end step progresissive-->
+                                        <h3 class="page-title">
+                                            Dashboard
+                                            <small>dashboard & statistics</small>
+                                        </h3>
+                                        <h3 class="page-title margin-top-50"></h3>
+                                        <div class="row">
+                                            <div class="col-md-12">
+
+                                                <div id="example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="dataTables_length" id="example_length">
+                                                                <label>
+                                                                    Show
+                                                                    <select name="example_length" aria-controls="example" class="form-control input-sm">
+                                                                        <option value="10">10</option>
+                                                                        <option value="25">25</option>
+                                                                        <option value="50">50</option>
+                                                                        <option value="100">100</option>
+                                                                    </select>
+                                                                    entries
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div id="example_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control input-sm" placeholder="" aria-controls="example"></label></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <table id="example" class="table table-striped table-bordered dataTable no-footer" cellspacing="0" width="100%" role="grid" aria-describedby="example_info" style="width: 100%;">
+                                                                <thead>
+                                                                    <tr role="row">
+                                                                        <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 248px;">#</th>
+                                                                        <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 401px;">Subject Name</th>
+                                                                        <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 187px;">Subject Author</th>
+                                                                        <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 187px;">Subject Code</th>
+                                                                        <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column descending" aria-sort="ascending" style="width: 147px;">Teacher</th>
+                                                                        <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column descending" aria-sort="ascending" style="width: 147px;">Min.Marks</th>
+                                                                        <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column descending" aria-sort="ascending" style="width: 147px;">Max.Marks</th>
+
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+
+                                                                    <tr role="row" class="odd">
+                                                                        <td class="">1</td>
+                                                                        <td class="">   science</td>
+                                                                        <td class="">   science</td>
+                                                                        <td class="sorting_1">      science</td>
+                                                                        <td class="">namratha</td>
+                                                                        <td class="sorting_1">40</td>
+                                                                        <td class="sorting_1">  40</td>
+
+                                                                    </tr>
+                                                                    <tr role="row" class="odd">
+                                                                        <td class="">1</td>
+                                                                        <td class="">   science</td>
+                                                                        <td class="">   science</td>
+                                                                        <td class="sorting_1">      science</td>
+                                                                        <td class="">namratha</td>
+                                                                        <td class="sorting_1">40</td>
+                                                                        <td class="sorting_1">  40</td>
+
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-5">
+                                                            <div class="dataTables_info" id="example_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div>
+                                                        </div>
+                                                        <div class="col-sm-7">
+                                                            <div class="dataTables_paginate paging_simple_numbers" id="example_paginate">
+                                                                <ul class="pagination">
+                                                                    <li class="paginate_button previous disabled" id="example_previous"><a href="https://datatables.net/manual/styling/bootstrap-simple.html#" aria-controls="example" data-dt-idx="0" tabindex="0">Previous</a></li>
+                                                                    <li class="paginate_button active"><a href="https://datatables.net/manual/styling/bootstrap-simple.html#" aria-controls="example" data-dt-idx="1" tabindex="0">1</a></li>
+                                                                    <li class="paginate_button "><a href="https://datatables.net/manual/styling/bootstrap-simple.html#" aria-controls="example" data-dt-idx="2" tabindex="0">2</a></li>
+                                                                    <li class="paginate_button "><a href="https://datatables.net/manual/styling/bootstrap-simple.html#" aria-controls="example" data-dt-idx="3" tabindex="0">3</a></li>
+                                                                    <li class="paginate_button "><a href="https://datatables.net/manual/styling/bootstrap-simple.html#" aria-controls="example" data-dt-idx="4" tabindex="0">4</a></li>
+                                                                    <li class="paginate_button "><a href="https://datatables.net/manual/styling/bootstrap-simple.html#" aria-controls="example" data-dt-idx="5" tabindex="0">5</a></li>
+                                                                    <li class="paginate_button "><a href="https://datatables.net/manual/styling/bootstrap-simple.html#" aria-controls="example" data-dt-idx="6" tabindex="0">6</a></li>
+                                                                    <li class="paginate_button next" id="example_next"><a href="https://datatables.net/manual/styling/bootstrap-simple.html#" aria-controls="example" data-dt-idx="7" tabindex="0">Next</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+                                            </div>
+                                        </div>
+                                        <div class="form-actions margin-bottom-20 right" style="margin-top:40px;">
+                                            <button type="button" class="btn green">Save</button>
+                                            <button type="submit" class="btn  default ">Close Window</button>
+                                        </div>
+
+                                        <div class="clearfix"></div>
+                                    </div>
                                 </div>
                             </div>
 
-
-
-
                         </div>
-                        <!-- END CONTENT BODY -->
-                    </div>
+
+
+
 
                 </div>
+                <!-- END CONTENT BODY -->
+      
 
+        </div>
+    </div>
+</div>
 
+<script src="../js/datatables.min.js"></script>
 
+<script type="text/javascript" charset="utf-8">
+         $(document).ready(function() {
+            $('#example').DataTable();
+         } );
+</script>

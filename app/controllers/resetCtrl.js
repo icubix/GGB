@@ -1,6 +1,6 @@
 var app = angular.module('GGBApp.resetCtrl',['GGBApp.rstFactory']);
 console.log("testing iunfo");
-app.controller('resetCtrl',function($scope,$rootScope,resetFactory,$routeParams){
+app.controller('resetCtrl',function($scope,$rootScope,resetFactory,$routeParams,$location){
 
 /*    $rootScope.IsVisible = false;
        */    
@@ -14,6 +14,7 @@ app.controller('resetCtrl',function($scope,$rootScope,resetFactory,$routeParams)
             $scope.resetForm.userID = userID;
             resetFactory.SendRestInfoDetails($scope.resetForm).success(function (resultData) {
             $scope.CountryListData = resultData;
+            $location.path('/login');
         })
         .error(function (errorData) {
             console.log(errorData);

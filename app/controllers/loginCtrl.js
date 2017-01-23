@@ -15,9 +15,6 @@ app.controller('loginCtrl',function($scope,$rootScope,$location,loginFactory){
 	            {
 	            	$location.path('/login');
 	            }
-	            //$cookieStore.put("UserID", resultData[0].UserID);
-	            //alert(resultData[0].UserID);
-	            
     		})
        .error(function (errorData) 
        	{ 

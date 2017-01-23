@@ -43,6 +43,12 @@ app.config(function($routeProvider) {
     templateUrl:'views/securitydetails.html',
     controller:'securityCtrl'
   })
+  .when('/support',{
+    templateUrl:'views/support.html'
+  })
+  .when('/notification',{
+    templateUrl:'views/notification.html'
+  })
  .when('/reset/:ID',{
     templateUrl:'views/resetpassword.html',
     controller:'resetCtrl'
@@ -55,5 +61,5 @@ app.config(function($routeProvider) {
     templateUrl:'views/forgot.html',
     controller:'forgotCtrl'
   })
-  .otherwise({redirectTo: '/forgot'});
+  .otherwise({redirectTo: '/login'});
 });

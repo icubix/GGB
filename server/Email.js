@@ -21,8 +21,8 @@ var transporter = nodemailer.createTransport({
 
 function getUserId(emailAddress,res){
 
-var query = "select * from tblusers where EmailAddress = '" + emailAddress + "'";
-connection.query(query,function(err,result){
+    var query = "select * from tblusers where EmailAddress = '" + emailAddress + "'";
+    connection.query(query,function(err,result){
         if(err)
         {
             console.log(err);
@@ -32,7 +32,7 @@ connection.query(query,function(err,result){
            console.log(result);
             return result;
         }
-});
+    });
 };
 // send mail with defined transport object
 
@@ -46,7 +46,7 @@ Email.prototype.sendEmail = function(req,res){
     //var result = getUserId(req.body.EmailAddress);
     var query = "select UserID from tblusers where EmailAddress = '" + req.body.EmailAddress + "'";
   //  console.log(UserID);
-
+    var userID;
     connection.query(query,function(err,result){
         if(err)
         {
@@ -54,36 +54,40 @@ Email.prototype.sendEmail = function(req,res){
         }
         else
         {
-           console.log(result);
-            return result;
-  
+           
+           userID = result[0].UserID;
+           EmailSending(userID,req.body.EmailAddress);
+           console.log("sending")
+           return res.json(result);
+           
+        }
 
-	var text = 'http://localhost:2424/#/reset/ ' +  result.UserID ;
-
-	console.log(req.body.EmailAddress);
-
-	var mailOptions = {
-    from: 'Kalidasu.Surada@gmail.com', // sender address
-    to: req.body.EmailAddress, // list of receivers
-    subject: 'Email Example', // Subject line
-    text: text //, // plaintext body
-    // html: '<b>Hello world ✔</b>' // You can choose to send an HTML body instead
-    };
-
-
-	transporter.sendMail(mailOptions, function(error, info){
-	    if(error){
-	        return console.log(error);
-	    }
-    	console.log('Message sent: ' + info.response);
-	});
-  }
  });
     
 };
 
+function EmailSending(userID,emailAddress)
+{
+     var text = 'http://localhost:2424/#/reset/' +  userID;
+            //console.log(req.body.EmailAddress);
+
+            var mailOptions = {
+            from: 'Kalidasu.Surada@gmail.com', // sender address
+            to: emailAddress, // list of receivers
+            subject: 'Email Example', // Subject line
+            text: text //, // plaintext body
+            // html: '<b>Hello world ✔</b>' // You can choose to send an HTML body instead
+            };
 
 
+            transporter.sendMail(mailOptions, function(error, info){
+                if(error){
+                    return console.log(error);
+                }
+                console.log('Message sent: ' + info.response);
+                
+            });
 
+}
 
 module.exports = new Email();
