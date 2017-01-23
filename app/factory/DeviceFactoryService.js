@@ -3,6 +3,7 @@ app.factory('deviceFactory', function($http,urls){
 return{
 	 GetDevice: function (data) {
 	 		console.log(data);
+	 		console.log("kali");
             return $http({
                 url: urls.apiUrl +'device/GetDevice',
                 method: "POST",
