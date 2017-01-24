@@ -14,7 +14,11 @@ var auth = function(){};
 
 auth.prototype.ValidateLogin = function(req,res){
 	console.log("abc");
-	var query = "select * from tblusers where UserName = " + "'" + req.body.UserName + "' and " + "PassWord = '" + req.body.PassWord + "'";
+	var query = "SELECT tu.*,tr.* " +
+				"from tblusers tu " +
+				"inner join tbluserroles tur on tu.userid = tur.userid " +
+				"inner join tblroles tr on tur.roleid = tr.roleid " +
+				"where UserName = " + "'" + req.body.UserName + "' and " + "PassWord = '" + req.body.PassWord + "'";
 	console.log(query);
 	connection.query(query,function(err,result){
 		if(err)
