@@ -46,9 +46,9 @@ app.config(function($routeProvider) {
   .when('/support',{
     templateUrl:'views/support.html'
   })
-  .when('/notification',{
-    templateUrl:'views/notification.html'
-  })
+  // .when('/notification',{
+  //   templateUrl:'views/notification.html'
+  // })
  .when('/reset/:ID',{
     templateUrl:'views/resetpassword.html',
     controller:'resetCtrl'

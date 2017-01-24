@@ -15,11 +15,11 @@
                     <div class="container">
                         <div class="row">
                             <div class="portlet light">
-                                <div class="notleft">
+                                <form class="notleft" name="notification_form" novalidate>
                                     <h4>Message Center</h4>
                                     <div class="col-md-12">
                                         <h5>Subject</h5>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="issueDetails1" ng-model="notification_form.IssueDetails" required="true">
                                         <p>text of the printing </p>
                                     </div>
                                     <div class="row">
@@ -70,13 +70,13 @@
                                         </div>
                                     </div>
                                     <div class="col-md-12">
-                                        <button type="button" class="btn btn-default">Filter Message</button>
+                                        <button type="submit" class="btn btn-default" ng-click="SendTrackInfo()"  >Filter Message</button>
 
                                     </div>
 
 
 
-                                </div>
+                                </form>
                                 <div class="notrght">
                                     <div class="page-content">
                                         <div class="clearfix"> </div>
