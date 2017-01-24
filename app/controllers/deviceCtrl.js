@@ -3,24 +3,27 @@ console.log("device testing");
 app.controller('deviceCtrl',function($scope,$rootScope,$routeParams,deviceFactory){
 $rootScope.IsVisible = true;
 //alert("Login controlloer calling");
+var DeviceID = $routeParams.ID;
+$scope.form = {};
 
+ 
+ $scope.GetDevice = function(){
 
- $scope.GetDevice = function(uuID){
-
+ 	   $scope.form.DeviceUDID = DeviceID;
+ 	   //console.log($scope.form.DeviceID);
        deviceFactory.GetDevice($scope.form).success(function (resultData) {
             $scope.Devices = resultData;
-          
-
-    }).error(function (errorData) { });;
+            console.log($scope.Devices);
+    	}).error(function (errorData) { });;
 
      };   
 
-
-     (function()
-     {
-     	var uuId = $routeParams.ID;
-     	$scope.GetDevice(uuId);
-     })(); 
+(function () {
+         
+        $scope.GetDevice();
+       
+         })();
+   
 
 });
 
