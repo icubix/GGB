@@ -13,7 +13,13 @@ $scope.form = {};
  	   //console.log($scope.form.DeviceID);
        deviceFactory.GetDevice($scope.form).success(function (resultData) {
             $scope.Devices = resultData;
-            console.log($scope.Devices);
+             // angular.forEach(resultData, function(value, key) {
+
+             // 	  $scope.EditDeviceForm.UDID = value.UDID;
+             //   });  
+           
+
+          console.log( $scope.Devices);
     	}).error(function (errorData) { });;
 
      };   

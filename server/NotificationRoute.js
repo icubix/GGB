@@ -25,5 +25,9 @@ router.post('/getIssueDetails',function(req,res){
 	return data;
 })
 
+router.get('/ShowEmails',function(req,res){
+	var data = notification.ShowEmails(req,res);
+	return data;
+})
 
 module.exports = router;

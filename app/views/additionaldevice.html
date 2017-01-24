@@ -1,11 +1,11 @@
 ﻿
 <div class="page-container">
-    <!-- BEGIN SIDEBAR -->
+   
     <div class="page-sidebar-wrapper">
         <div class="page-sidebar navbar-collapse collapse sidebar">
 
         </div>
-        <!-- END SIDEBAR -->
+      
     </div>
     <div class="page-content-wrapper">
 
@@ -18,7 +18,7 @@
                 </ul>
             </div>
 
-            <div class="portlet light">
+            <div class="portlet light" ng-repeat="item in Devices">
                 <div class="container">
                     <div class="hero">
                         Device Details</h4>
@@ -31,9 +31,9 @@
                             <thead class="eo">
                                 <tr>
                                     <th>  New Device </th>
-                                    <th> {{ Devices.DeviceID }}   </th>
+                                    <th> {{ item.UDID }}   </th>
                                     <th>   Existing Device  </th>
-                                    <th>   WTS5476915  </th>
+                                    <th>  {{item.UDID}} </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -62,27 +62,27 @@
                             <thead class="eo">
                                 <tr>
                                     <th> Machine No</th>
-                                    <th> WTS647615  </th>
+                                    <th> {{item.MachineNumber}}  </th>
                                     <th>   Make:  	</th>
-                                    <th>  WTS</th>
+                                    <th>  {{item.Make}}</th>
                                 </tr>
                                 <tr>
                                     <th> RFID No:  </th>
-                                    <th> 	A9999999</th>
+                                    <th> 	{{item.RFID}}</th>
                                     <th>  	 Model   	</th>
-                                    <th> 	JUPITER</th>
+                                    <th> 	{{item.Model}}</th>
                                 </tr>
                                 <tr>
                                     <th>     Engine No:     </th>
-                                    <th> 		pic 9</th>
+                                    <th> 		{{item.EngineNumber}}</th>
                                     <th>   type of Machine:  	</th>
-                                    <th> 	   Manufacture Year </th>
+                                    <th> 	  {{item.TypeOfMachine}} </th>
                                 </tr>
                                 <tr>
                                     <th>    Manufacture Year    </th>
-                                    <th> 	 2014	</th>
+                                    <th> 	 {{item.Year}}	</th>
                                     <th>  type		</th>
-                                    <th> 	  	W2S</th>
+                                    <th> 	  	{{item.Type}}</th>
                                 </tr>
 
                         </table>
@@ -108,9 +108,9 @@
                             <thead class="eo">
                                 <tr>
                                     <th>        Mobile Number:	</th>
-                                    <th>	Enter 10 Digit Mobile No</th>
+                                    <th>	{{item.MobileNumber}}</th>
                                     <th class="colorred">   Mobile Action Code</th>
-                                    <th>   Activation Code</th>
+                                    <th>   {{item.ActivationCode}}</th>
                                 </tr>
                             </thead>
                         </table>
@@ -144,7 +144,7 @@
                             <thead class="eo">
                                 <tr>
                                     <th>           Date   			</th>
-                                    <th>		DD/MM/YYY		</th>
+                                    <th>	{{item.Date}}	</th>
                                     <th class="colgreen">   Test Results</th>
                                     <th>  CO </th>
                                     <th> HC </th>
@@ -152,10 +152,165 @@
 
                                 <tr>
                                     <th>             Renewel Date 			</th>
-                                    <th>		DD/MM/YYY		</th>
+                                    <th>		{{item.RenewelDate}}	</th>
                                     <th class="colgreen">  Reuiiation(%)</th>
                                     <th>    3.2% </th>
                                     <th>   47000 </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+               <!--  <div class="container">
+                <div class="col-md-2  pull-right margin-right-94" >
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-info pull-left">Cancel</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-info pull-left">Next</button>
+                    </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+<!-- <form class="page-container"  name="EditDeviceForm" novalidate>
+   
+    <div class="page-sidebar-wrapper">
+        <div class="page-sidebar navbar-collapse collapse sidebar">
+        </div>
+       
+    </div>
+    <div class="page-content-wrapper">
+        <div class="page-content">
+            <div class="page-bar">
+                <ul class="page-breadcrumb">
+                    <li>
+                        <span class="aduser">Edit Device</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="portlet light">
+                <div class="container">
+                    <div class="hero">
+                        Device Details</h4>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <table class='table borderless tbtop'>
+                            <thead class="eo">
+                                <tr>
+                                    <th width="267px" class="fontbold">New Device</th>
+                                    <th width="267px"><input type="text" class="form-control" placeholder="New Device" data-model="EditDeviceForm.UDID"> </th>
+                                    <th width="267px" class="fontbold">Existing Device </th>
+                                    <th width="267px"><input type="text" class="form-control" data-model="EditDeviceForm.UDID" placeholder="Existing Device">  </th>
+                                </tr>
+                            </thead>                   
+                        </table>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="hero">
+                        Machine Details
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <table class='table borderless tbtop'>
+                            <thead class="eo">
+                                <tr>
+                                    <th width="267px" class="fontbold">Machine No</th>
+                                      <th width="267px"><input type="text" class="form-control" data-model="EditDeviceForm.MachineNumber" placeholder="Machine No"> </th>
+                                      <th width="267px" class="fontbold">   Make:   </th>
+                                      <th width="267px"> <input type="text" class="form-control" data-model="EditDeviceForm.Make" placeholder="Make"> </th>
+                                </tr>
+                                <tr>
+                                     <th width="267px" class="fontbold"> RFID No:  </th>
+                                      <th width="267px">    <input type="text" class="form-control" data-model="EditDeviceForm.RFID" placeholder=" RFID No"> </th>
+                                     <th width="267px" class="fontbold">     Model      </th>
+                                    <th width="267px">  <input type="text" class="form-control"  data-model="EditDeviceForm.Model" placeholder="Model"> </th>
+                                </tr>
+                                <tr>
+                                     <th width="267px" class="fontbold">     Engine No:     </th>
+                                    <th width="267px">      <input type="text" class="form-control" data-model="EditDeviceForm.EngineNumber"  placeholder="Engine No"> </th>
+                                     <th width="267px" class="fontbold">   type of Machine:     </th>
+                                      <th width="267px" >      <input type="text" class="form-control" data-model="EditDeviceForm.TypeOfMachine"  placeholder="type of Machine">  </th>
+                                </tr>
+                                <tr>
+                                     <th width="267px" class="fontbold">   Manufacture Year    </th>
+                                     <th width="267px"><input type="text" class="form-control" data-model="EditDeviceForm.Year"  placeholder="Manufacture Year">     </th>
+                                     <th width="267px"  class="fontbold" >  type        </th>
+                                     <th width="267px">     <input type="text" class="form-control" data-model="EditDeviceForm.Type"  placeholder="type"> </th>
+                                </tr>
+                        </table>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <div class="container">
+                    <div class="hero margin-top-20">
+                        Customer Details
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <table class='table borderless tbtop'>
+                            <thead class="eo">
+                                <tr>
+                                   <th width="267px" class="fontbold">     Mobile Number:   </th>
+                                  <th width="267px">    <input type="text" class="form-control" data-model="EditDeviceForm.MobileNumber"  placeholder=" Mobile Number"> </th>
+                                    <th class="colorred" class="fontbold">   Mobile Activation Code</th>
+                                    <th width="267px">   <input type="text" class="form-control" data-model="EditDeviceForm.ActivationCode"  placeholder="Mobile Action Code"> </th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="hero">
+                        Reward Details
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-10">
+                        <table class='table borderless tbtop'>
+                            <thead class="eo">
+                                <tr>
+                                 <th width="267px" class="fontbold">         Date               </th>
+                           <th width="267px">   <input type="text" class="form-control" data-model="EditDeviceForm.Date"  placeholder="Date">    </th>
+                                   <th width="267px" class="colgreen">   Test Results</th>
+                                    <th width="133px" class="fontbold"> CO </th>
+                                   <th width="133px"> HC </th>
+                                </tr>
+
+                                <tr>
+                                   <th width="267px" class="fontbold">  Renewel Date </th>
+                                   <th width="267px"><input type="text" class="form-control" data-model="EditDeviceForm.RenewelDate"  placeholder="Renewel Date"> </th>
+                                  <th width="267px" class="colgreen">Reuiiation(%)</th>
+                                <th width="133px">   <input type="text" class="form-control" data-model="EditDeviceForm.CO"  placeholder="CO"> </th>
+                                  
+                                   <th width="133px">   <input type="text" class="form-control" data-model="EditDeviceForm.HC"  placeholder="HC"> </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -188,9 +343,9 @@
                         <button type="button" class="btn btn-info pull-left">Cancel</button>
                     </div>
                     <div class="col-md-6">
-                        <button type="button" class="btn btn-info pull-left">Next</button>
+                        <button type="submit" class="btn btn-info pull-left" ng-click="SaveEditDevice()">Next</button>
                     </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </form> -->

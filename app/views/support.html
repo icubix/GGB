@@ -34,14 +34,14 @@
                     </div>
                     <div class="supright">                      
                   
-                        <div class="col-md-12 row">
+                        <form class="col-md-12 row" name="support_form" novalidate>
                             <div class="container">
                                 <h4>Issue Details</h4>
                                 <hr>
                             </div>
                             <div class="col-md-offset-1  col-md-8 well margin-top-50">
                                 <form accept-charset="UTF-8" action="" method="POST">
-                                    <textarea class="form-control" id="text" name="text" placeholder="Type in your message" rows="5"></textarea>
+                                    <textarea class="form-control" id="text" name="text" placeholder="Type in your message" rows="5" ng-model="support_form.IssueDetails"></textarea>
                                     <h6 class="pull-right" id="count_message"></h6>                                    
                                 </form>
                             </div>
@@ -50,11 +50,11 @@
                                     <button type="button" class="btn btn-info pull-left">Cancel</button>
                                 </div>
                                 <div class="col-md-6">
-                                    <button type="button" class="btn btn-info pull-left">Submit</button>
+                                    <button type="button" class="btn btn-info pull-left" ng-click="SendTrackInfo()">Submit</button>
                                 </div>
                             </div>
                         
-                        </div>
+                        </form>
                     </div>
                
                     <div class="bordright"></div>

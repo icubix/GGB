@@ -1,10 +1,10 @@
 var app = angular.module('GGBApp.notifcatonFactory',['GGBApp.myApp']);
 app.factory('notifcatonFactory', function($http,urls){
 return{
-	 SendTrackDetails: function (data) {
+	 GetEmails: function (data) {
 	 		console.log(data);
             return $http({
-                url: urls.apiUrl +'Notification/trackIssueDetails',
+                url: urls.apiUrl +'Notification/ShowEmails',
                 method: "POST",
               //  data: '=' + encodeURIComponent(JSON.stringify(data)),
                data: data
