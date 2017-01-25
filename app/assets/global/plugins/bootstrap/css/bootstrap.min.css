@@ -8628,6 +8628,7 @@ float: left;
     background: #f3f7ff;
     border: 1px solid #e1ecf4;
     height: 600px;
+    margin-left:25px;
 
 }
 .form-control::-ms-expand {
@@ -8852,6 +8853,16 @@ background: #4c5c76;
 .leftcheck{
 width: 520px;
     float: left;
+}
+.supleft{
+    width: 520px;
+    float: left;
+}
+.supright{
+    float: left;
+    width: 768px;
+    border-left: 1px solid #000;
+    height: 500px;
 }
 .rightcheck{
 float: left;

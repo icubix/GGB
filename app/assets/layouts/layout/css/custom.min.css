@@ -11,6 +11,67 @@
     top: -1px;
     z-index: 3000;
 }
+.not_button button{
+    text-align:left;
+    color:#fff!important
+}
+.no_radius{
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    font-size: 14px;
+    line-height: 1.42857;
+    border-radius:0px!important;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding:6px 16px;
+}
+.btn_blue{
+  color: #fff;
+    background-color: #337ab7!important;
+    border-color: #2e6da4!important;
+    cursor: text!important;
+    width: 220px;
+    border-radius: 3px!important;
+    padding: 5px 8px;
+}
+.notrght{
+    margin-left: 20px;
+    float: left;
+    width: 980px;
+}
+.txtsuport{
+    text-align:center;
+    margin-top:40px;
+}
+.margin-top-20{
+    margin-top:20px;
+}
+.not_grey{
+  color: #fff;
+    background-color: #ccc!important;
+    border-color: #ccc!important;
+    cursor: text!important;
+    width: 220px;
+    border-radius: 3px!important;
+    padding: 5px 8px;
+}
+.margin-top-20{
+    margin-top:20px;
+}
+.checkbx{
+    position:relative;
+    top:2px;
+}
+
 .logo-default{
 	margin-left:10px!important;
 }
