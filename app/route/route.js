@@ -57,6 +57,10 @@ app.config(function($routeProvider) {
     templateUrl:'views/adddevice.html',
     controller:'addeviceCtrl'
   })
+      .when('/adddevice/:ID',{
+    templateUrl:'views/adddevice.html',
+    controller:'addeviceCtrl'
+  })
    .when('/forgot',{
     templateUrl:'views/forgot.html',
     controller:'forgotCtrl'
