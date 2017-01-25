@@ -92,6 +92,7 @@ function updateResourceTable(AllocationDate,ExpiryDate,RegulationValueOne,Regula
 }
 
 device.prototype.saveMachineDetails = function(req,res){
+	console.log(req.body);
 	var query = "insert into tblDevice(UDID,WRSNo,ActivationDate,isActive) values('" +
 				      req.body.UDID + "'," +
 				"'" + req.body.WRSNo + "'," +
@@ -106,19 +107,22 @@ device.prototype.saveMachineDetails = function(req,res){
 		}
 		else
 		{
+			console.log(req.body.ActivationDate);
+			console.log(req.body.ExpiryDate);
 			AddMachineDtls(req.body.UDID,req.body.EngineNumber,req.body.MachineNumber,req.body.Make,req.body.Model,req.body.RFID,req.body.Type,req.body.TypeOfMachine,req.body.Year,
-						   req.body.AllocationDate,
+						   req.body.ActivationDate,
 						   req.body.ExpiryDate,
 						   req.body.RegulationValueOne,
 						   req.body.RegulationValueTwo,
 						   req.body.UserID,
-						   req.body.WRSNo);
+						   req.body.WRSNo,
+						   req.body.UDID);
 			return res.json(result);
 		}
 	});
 }
 
-function AddMachineDtls(UDID,EngineNumber,MachineNumber,Make,Model,RFID,Type,TypeOfMachine,Year,AllocationDate,ExpiryDate,RegulationValueOne,RegulationValueTwo,UserID,WRSNo){
+function AddMachineDtls(UDID,EngineNumber,MachineNumber,Make,Model,RFID,Type,TypeOfMachine,Year,AllocationDate,ExpiryDate,RegulationValueOne,RegulationValueTwo,UserID,WRSNo,DeviceUDID){
 	var query = "insert into tblmachinedetails(DeviceID,EngineNumber,MachineNumber,Make,Model,RFID,Type,TypeOfMachine,Year) values(" +
 				"'" + UDID + "'," +
 				"'" + EngineNumber + "'," +
@@ -138,7 +142,7 @@ function AddMachineDtls(UDID,EngineNumber,MachineNumber,Make,Model,RFID,Type,Typ
 		}
 		else
 		{
-			AddRenewalDtls(AllocationDate,ExpiryDate,RegulationValueOne,RegulationValueTwo,UserID,WRSNo);
+			AddRenewalDtls(AllocationDate,ExpiryDate,RegulationValueOne,RegulationValueTwo,UserID,WRSNo,DeviceUDID);
 			console.log(result.insertId);
 		}
 	});
@@ -146,14 +150,15 @@ function AddMachineDtls(UDID,EngineNumber,MachineNumber,Make,Model,RFID,Type,Typ
 }
 
 
-function AddRenewalDtls(AllocationDate,ExpiryDate,RegulationValueOne,RegulationValueTwo,UserID,WRSNo){
-	var query = "insert into tblResourcetable(AllocationDate,ExpiryDate,RegulationValueOne,RegulationValueTwo,UserID,WRSNo) values(" +
+function AddRenewalDtls(AllocationDate,ExpiryDate,RegulationValueOne,RegulationValueTwo,UserID,WRSNo,DeviceUDID){
+	var query = "insert into tblResourcetable(AllocationDate,ExpiryDate,RegulationValueOne,RegulationValueTwo,UserID,WRSNo,DeviceUDID) values(" +
 				"'" + AllocationDate + "'," +
 				"'" + ExpiryDate + "'," +
 				"'" + RegulationValueOne + "'," +
 				"'" + RegulationValueTwo + "'," +
 				"'" + UserID + "'," +
-				"'" + WRSNo + "'" +
+				"'" + WRSNo + "'," +
+				"'" + DeviceUDID + "'" +
 				")";
 	connection.query(query,function(err,result){
 		if(err)

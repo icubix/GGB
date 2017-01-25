@@ -10,6 +10,7 @@ $scope.form = {};
  $scope.GetDevice = function(){
 
  	   $scope.form.DeviceUDID = DeviceID;
+       $scope.form.UserID = 36;
  	   //console.log($scope.form.DeviceID);
        deviceFactory.GetDevice($scope.form).success(function (resultData) {
             $scope.Devices = resultData;
