@@ -37,22 +37,18 @@ var DeviceID = $routeParams.ID;
              angular.forEach(resultData, function(value, key) {
 
                  $scope.addDeviceForm.UDID = value.UDID;
-                    $scope.addDeviceForm.MachineNumber = value.MachineNumber;
-                     $scope.addDeviceForm.Make = value.Make;
-                      $scope.addDeviceForm.RFID = value.RFID;
-                       $scope.addDeviceForm.Model = value.Model;
-                        $scope.addDeviceForm.EngineNumber = value.EngineNumber;
-                         $scope.addDeviceForm.TypeOfMachine = value.TypeOfMachine;
-                          $scope.addDeviceForm.Year = value.Year;
-                           $scope.addDeviceForm.Type = value.Type;
-                            $scope.addDeviceForm.MobileNumber = value.MobileNumber;
-                             $scope.addDeviceForm.ActivationCode = value.ActivationCode;
-                              $scope.addDeviceForm.CO = value.CO;
-                              $scope.addDeviceForm.HC = value.HC;
-
-
-
-
+                 $scope.addDeviceForm.MachineNumber = value.MachineNumber;
+                 $scope.addDeviceForm.Make = value.Make;
+                 $scope.addDeviceForm.RFID = value.RFID;
+                 $scope.addDeviceForm.Model = value.Model;
+                 $scope.addDeviceForm.EngineNumber = value.EngineNumber;
+                 $scope.addDeviceForm.TypeOfMachine = value.TypeOfMachine;
+                 $scope.addDeviceForm.Year = value.Year;
+                 $scope.addDeviceForm.Type = value.Type;
+                 $scope.addDeviceForm.MobileNumber = value.MobileNumber;
+                 $scope.addDeviceForm.ActivationCode = value.ActivationCode;
+                 $scope.addDeviceForm.CO = value.CO;
+                 $scope.addDeviceForm.HC = value.HC;
                });  
            
 

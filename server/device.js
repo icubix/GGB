@@ -29,7 +29,7 @@ device.prototype.GetDevices = function(req,res){
 };
 
 device.prototype.getDevice = function(req,res){
-	var query = " select td.*,tm.* from tblDevice td " +
+	var query = " select distinct td.*,tm.* from tblDevice td " +
 				" inner join tblMachineDetails tm on td.UDID = tm.DeviceID " +
 				"  where td.UDID='" + req.body.DeviceUDID +"'";
 	console.log(query);
@@ -40,6 +40,7 @@ device.prototype.getDevice = function(req,res){
 		}
 		else
 		{
+			console.log(result);
 			return res.json(result);
 		}
 	});
@@ -194,6 +195,18 @@ device.prototype.sendActivationCode = function(req,res){
  
 }
 
-
+device.prototype.checkDeviceStatus = function(req,res){
+	var query = "select count(*) from tblDevice where UDID = '" + req.body.DeviceUDID + "'";
+	console.log(query);
+	connection.query(query,function(err,result){
+		if(err){
+			console.log(err);
+		}
+		else
+		{
+			return res.json(result);
+		}
+	});
+}
 
 module.exports = new device();

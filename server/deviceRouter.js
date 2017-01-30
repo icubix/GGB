@@ -41,5 +41,10 @@ router.post('/saveMachineDetails',function(req,res){
 	return data;
 })
 
+router.post('/checkDeviceStatus',function(req,res){
+	var data = device.checkDeviceStatus(req,res);
+	return data;
+})
+
 
 module.exports = router;
