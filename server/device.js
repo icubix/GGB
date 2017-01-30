@@ -64,7 +64,10 @@ device.prototype.updateMachineDetails = function(req,res){
 		}
 		else
 		{
-			updateResourceTable(AllocationDate,ExpiryDate,RegulationValueOne,RegulationValueTwo,UserID);
+			updateResourceTable(req.body.ActivationDate,
+						   req.body.ExpiryDate,
+						   req.body.RegulationValueOne,
+						   req.body.RegulationValueTwo,req.body.UserID);
 			return res.json(result);
 		}
 	});
