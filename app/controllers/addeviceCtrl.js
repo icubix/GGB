@@ -12,19 +12,55 @@ var DeviceID = $routeParams.ID;
  			$scope.addDeviceForm.UserID = 36;
   			console.log($scope.addDeviceForm.WRSNo);
   			console.log("kali");
-            addDeviceFactory.SaveDeviceDetails($scope.addDeviceForm).success(function (resultData) {
-            console.log(resultData);
-            if(resultData != null)
-            {
-            	$location.path('/check');
-            }
-            //$scope.Device = resultData;
+
+              $scope.form.DeviceUDID = $scope.addDeviceForm.UDID  
+             addDeviceFactory.CheckDeviceDetails( $scope.form).success(function (resultData) {
+                                console.log(resultData);
+                                if(resultData != 1)
+                                {
+                                    console.log($scope.addDeviceForm)
+                                                    addDeviceFactory.UpdateDeviceDetails($scope.addDeviceForm).success(function (resultData) {
+                                                    console.log(resultData);
+                                                    if(resultData != null)
+                                                    {
+                                                        $location.path('/check');
+                                                    }
+                                                    //$scope.Device = resultData;
 
 
-        })
-        .error(function (errorData) {
-            console.log(errorData);
-         });
+                                                }) .error(function (errorData) {
+                                            console.log(errorData);
+                                            });
+                                }
+                                else
+                                {
+
+                                                 addDeviceFactory.SaveDeviceDetails($scope.addDeviceForm).success(function (resultData) {
+                                                console.log(resultData);
+                                                if(resultData != null)
+                                                {
+                                                    $location.path('/check');
+                                                }
+                                                //$scope.Device = resultData;
+
+
+                                            }) .error(function (errorData) {
+                                                console.log(errorData);
+                                             });
+
+                                }
+                                //$scope.Device = resultData;
+
+
+                            }) .error(function (errorData) {
+                        console.log(errorData);
+                        });
+
+
+            
+                        
+           
+       
     };
 
    $scope.GetDevice = function(){

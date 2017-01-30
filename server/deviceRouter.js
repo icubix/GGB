@@ -26,6 +26,7 @@ router.post('/getDevice',function(req,res){
 })
 
 router.post('/updateMachineDetails',function(req,res){
+	console.log(req.body);
 	var data = device.updateMachineDetails(req,res);
 	return data;
 })
