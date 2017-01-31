@@ -22,12 +22,15 @@
                     
                 </div>
                 <div class="col-md-6">
+                 <span style="color:red">{{message}}</span>
                     <div class="form-group">
                         <label class="control-label colorwhite">Username</label>
                        <div class="input-group">
                         <span class="input-group-addon brdtxt"><i class="glyphicon glyphicon-user"></i></span>
                         <input id="email" type="text" class="brd" placeholder="Email"  
-                        data-ng-model="form.UserName" >
+                        data-ng-model="form.UserName" required="true" name="UserName1">
+                        <span style="color:red" ng-show="form.UserName1.$dirty && form.UserName1.$invalid">
+                        <span ng-show="form.UserName1.$error.required">Username is required.</span>
                     </div>
                   
                     </div>
@@ -35,11 +38,13 @@
                         <label class="control-label colorwhite">Password</label>
                         <div class="input-group">
                             <span class="input-group-addon brdtxt"><i class="glyphicon glyphicon-lock"></i></span>
-                            <input id="password" type="password" class="brd" placeholder="Password" data-ng-model="form.PassWord">
+                            <input id="password" type="password" class="brd" placeholder="Password" data-ng-model="form.PassWord" required="true" name="PassWord1">
+                            <span style="color:red" ng-show="form.PassWord1.$dirty && form.PassWord1.$invalid">
+                        <span ng-show="form.PassWord1.$error.required">Password is required.</span>
                         </div>
                     </div>
                     <div class="form-actions">
-                        <button type="submit" class="btn green uppercase"  data-ng-click="LogIn()" >Login</button>                       
+                        <button type="submit" class="btn green uppercase"  data-ng-click="LogIn()" ng-disabled="form.$invalid">Login</button>                       
                     </div>  
                     <label class="control-label margin-top-10">
                         <a class="colorwhite" href="#forgot">Need Help in Sign in</a>

@@ -23,7 +23,9 @@ app.controller('loginCtrl',function($scope,$rootScope,$location,loginFactory){
 	            }
 	            else
 	            {
-	            	$location.path('/login');
+                $scope.message = "Invalid User name/ Password";
+
+	            	//$location.path('/login');
 	            }
     		})
        .error(function (errorData) 

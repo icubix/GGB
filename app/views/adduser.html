@@ -26,8 +26,9 @@
                                         <label class="control-label" data-ng-model="userform.CompanyName">
                                             Company Name 
                                         </label>
-                                        <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.CompanyName"  >
-                                        
+                                        <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.CompanyName" required="true"  name="CompanyName1" >
+                                         <span style="color:red" ng-show="userform.CompanyName1.$dirty && userform.CompanyName1.$invalid">
+                                         <span ng-show="userform.CompanyName1.$error.required">Companyname is required.</span>
                                     </div>
                                 </div>
                                 <div class="col-md-12 row">
@@ -42,13 +43,17 @@
                                     <label class="control-label">
                                         Address1
                                     </label>
-                                    <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.Addressone">
+                                    <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.Addressone" name="Addressone1" required="true">
+                                     <span style="color:red" ng-show="userform.Addressone1.$dirty && userform.Addressone1.$invalid">
+                                     <span ng-show="userform.Addressone1.$error.required">Addressone is required.</span>
                                 </div>
                                     <div class="form-group">
                                         <label class="control-label">
                                             Address2
                                         </label>
-                                        <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.addresstwo">
+                                        <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.addresstwo" required="true" name="addresstwo2">
+                                        <span style="color:red" ng-show="userform.addresstwo2.$dirty && userform.addresstwo2.$invalid">
+                                         <span ng-show="userform.addresstwo2.$error.required">Addresstwo is required.</span>
                                     </div>
                                 
                                  <div class="form-group row">
@@ -56,13 +61,17 @@
                                         <label class="control-label">
                                            Phone
                                         </label>
-                                        <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.Phone">
+                                        <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.Phone" name="Phone1" required="true">
+                                         <span style="color:red" ng-show="userform.Phone1.$dirty && userform.Phone1.$invalid">
+                                     <span ng-show="userform.Phone1.$error.required">Phone is required.</span>
                                     </div>
                                     <div class="col-md-6">
                                         <label class="control-label">
                                            Fax
                                         </label>
-                                        <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.fax">
+                                        <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.fax" required="true" name="fax1">
+                                        <span style="color:red" ng-show="userform.fax1.$dirty && userform.fax1.$invalid">
+                                     <span ng-show="userform.fax1.$error.required">Fax is required.</span>
                                     </div>
 
                                 </div>
@@ -71,13 +80,17 @@
                                         <label class="control-label">
                                            City
                                         </label>
-                                        <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.city">
+                                        <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.city" required="true" name="city1">
+                                         <span style="color:red" ng-show="userform.city1.$dirty && userform.city1.$invalid">
+                                     <span ng-show="userform.city1.$error.required">City is required.</span>
                                     </div>
                                     <div class="col-md-6">
                                         <label class="control-label">
                                            State
                                         </label>
-                                        <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.state">
+                                        <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.state" required="true" name="state1">
+                                        <span style="color:red" ng-show="userform.state1.$dirty && userform.state1.$invalid">
+                                     <span ng-show="userform.state1.$error.required">State is required.</span>
                                     </div>
 
                                 </div>
@@ -87,16 +100,22 @@
                                                 Country
                                             </label>
                                           <!--   <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.countryID"> -->
-                                               <select  class="form-control"  ng-model="userform.countryID" name="CountryName" required="true">
+                                               <select  class="form-control"  ng-model="userform.countryID" name="CountryId1" required="true">
                                            <option value="">Select Country</option>
                                            <option ng-repeat="item in CountryListData" value="{{item.CountryID}}">{{item.CountryName}}</option>
                                                 </select>
+
+                                     <span style="color:red" ng-show="userform.CountryId1.$dirty && userform.CountryId1.$invalid">
+                                     <span ng-show="userform.CountryId1.$error.required">Select Country.</span>
                                         </div>
                                         <div class="col-md-6">
                                             <label class="control-label">
                                                 Zip Code
                                             </label>
-                                            <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.zipcode">
+                                            <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.zipcode" required="true" name="zipcode1">
+
+                                             <span style="color:red" ng-show="userform.zipcode1.$dirty && userform.zipcode1.$invalid">
+                                     <span ng-show="userform.zipcode1.$error.required">Zipcode is required.</span>
                                         </div>
                                     </div>
                             </div>
@@ -115,13 +134,17 @@
                                             <label class="control-label">
                                               First Name
                                             </label>
-                                            <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.FirstName">
+                                            <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.FirstName" required="true" name="FirstName1">
+                                             <span style="color:red" ng-show="userform.FirstName1.$dirty && userform.FirstName1.$invalid">
+                                     <span ng-show="userform.FirstName1.$error.required">Firstname is required.</span>
                                         </div>
                                         <div class="col-md-6">
                                             <label class="control-label">
                                                Last Name
                                             </label>
-                                            <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.LastName">
+                                            <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.LastName" required="true" name="LastName1">
+                                            <span style="color:red" ng-show="userform.LastName1.$dirty && userform.LastName1.$invalid">
+                                     <span ng-show="userform.LastName1.$error.required">Lastname is required.</span>
                                         </div>
 
                                     </div>
@@ -130,13 +153,18 @@
                                             <label class="control-label">
                                                 Title
                                             </label>
-                                            <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.Title">
+                                            <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.Title" required="true" name="Title1">
+                                            <span style="color:red" ng-show="userform.Title1.$dirty && userform.Title1.$invalid">
+                                     <span ng-show="userform.Title1.$error.required">Title is required.</span>
                                         </div>
                                         <div class="col-md-6">
                                             <label class="control-label">
                                                Email
                                             </label>
-                                            <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.EmailAddress">
+                                            <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.EmailAddress" required="true" name="EmailAddress1">
+                                             <span style="color:red" ng-show="userform.EmailAddress1.$dirty && userform.EmailAddress1.$invalid">
+                                     <span ng-show="userform.EmailAddress1.$error.required">Emailaddress is required.</span>
+ 
                                         </div>
                                     </div>
                                 </div>
@@ -147,19 +175,25 @@
                                         <label class="control-label">
                                             Desired Username
                                         </label>
-                                        <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.UserName">
+                                        <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.UserName" required="true" name="UserName1">
+                                        <span style="color:red" ng-show="userform.UserName1.$dirty && userform.UserName1.$invalid">
+                                     <span ng-show="userform.UserName1.$error.required">Username is required.</span>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label">
                                             Password
                                         </label>
-                                        <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.PassWord">
+                                        <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.PassWord" required="true" name="PassWord1">
+                                         <span style="color:red" ng-show="userform.PassWord1.$dirty && userform.PassWord1.$invalid">
+                                     <span ng-show="userform.PassWord1.$error.required">Password is required.</span>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label">
                                             Re-enter Password
                                         </label>
-                                        <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.ReenterPassword">
+                                        <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.ReenterPassword" required="true" name="ReenterPassword1">
+                                        <span style="color:red" ng-show="userform.ReenterPassword1.$dirty && userform.ReenterPassword1.$invalid">
+                                     <span ng-show="userform.ReenterPassword1.$error.required">Reenterpassword is required.</span>
                                     </div>
                                 </div>
                       
@@ -181,7 +215,7 @@
                                     <label class="control-label">
                                         Secret Question
                                     </label>
-                                    <select  class="form-control"  ng-model="userform.QuestionID" name="Questions" required="true">
+                                    <select  class="form-control"  ng-model="userform.QuestionID" name="Questions1" required="true">
                                            <option value="">Select Questions</option>
                                            <option ng-repeat="item in SecutiryList" value="{{item.QuestionID}}">{{item.Question}}</option>
                                                 </select>
@@ -192,19 +226,24 @@
                                         <option>Option 4</option>
                                         <option>Option 5</option>
                                     </select> -->
+                                     <span style="color:red" ng-show="userform.Questions1.$dirty && userform.Questions1.$invalid">
+                                     <span ng-show="userform.Questions1.$error.required">Select Questions.</span>
                                 </div> 
                                     <div class="form-group">
                                         <label class="control-label">
                                             Answer to Secret Question
                                         </label>
-                                        <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.Answer">
-                                       
+                                        <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.Answer" required="true" name="Answer1">
+                                        <span style="color:red" ng-show="userform.Answer1.$dirty && userform.Answer1.$invalid">
+                                     <span ng-show="userform.Answer1.$error.required">Answer is required.</span>
                                     </div> 
                                     <div class="form-group">
                                         <label class="control-label">
                                             Conform Answer  
                                         </label>
-                                        <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.Answer">
+                                        <input type="text" class="form-control" id="form_control_1" data-ng-model="userform.Answer" required="true" name="Answer2">
+                                        <span style="color:red" ng-show="userform.Answer2.$dirty && userform.Answer2.$invalid">
+                                     <span ng-show="userform.Answer2.$error.required">Conformanswer is required.</span>
                                     </div>
                                     </div>
 
@@ -220,7 +259,7 @@
                                            <button type="button" class="btn btn-info pull-left">Cancel</button>
                                       </div>
                                       <div class="col-md-3">
-                                           <button type="submit" class="btn btn-info pull-left" ng-click="SaveUser()">Next</button>
+                                           <button type="submit" class="btn btn-info pull-left" ng-click="SaveUser()" ng-disabled="userform.$invalid">Next</button>
                                       </div>
                                       </div>
                                       </div>

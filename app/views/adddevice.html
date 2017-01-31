@@ -28,9 +28,15 @@
                             <thead class="eo">
                                 <tr>
                                     <th width="267px" class="fontbold">New Device</th>
-                                    <th width="267px"><input type="text" class="form-control" placeholder="New Device" data-ng-model="addDeviceForm.UDID"> </th>
+                                    <th width="267px"><input type="text" class="form-control" placeholder="New Device" data-ng-model="addDeviceForm.UDID" required="true" name="UDID1"> 
+                                    <span style="color:red" ng-show="addDeviceForm.UDID1.$dirty && addDeviceForm.UDID1.$invalid">
+                        <span ng-show="addDeviceForm.UDID1.$error.required">Newdevice is required.</span>
+                                    </th>
                                     <th width="267px" class="fontbold">Existing Device </th>
-                                    <th width="267px"><input type="text" class="form-control" data-ng-model="addDeviceForm.ExistingDeviceUDID" placeholder="Existing Device">  </th>
+                                    <th width="267px"><input type="text" class="form-control" data-ng-model="addDeviceForm.ExistingDeviceUDID" placeholder="Existing Device" name="ExistingDeviceUDID1" required="true"> 
+                                     <span style="color:red" ng-show="addDeviceForm.ExistingDeviceUDID1.$dirty && addDeviceForm.ExistingDeviceUDID1.$invalid">
+                        <span ng-show="addDeviceForm.ExistingDeviceUDID1.$error.required">Existingdevice is required.</span>
+                                     </th>
                                 </tr>
                             </thead>                   
                         </table>
@@ -48,27 +54,47 @@
                             <thead class="eo">
                                 <tr>
                                     <th width="267px" class="fontbold">Machine No</th>
-                                      <th width="267px"><input type="text" class="form-control" data-ng-model="addDeviceForm.MachineNumber" placeholder="Machine No"> </th>
+                                      <th width="267px"><input type="text" class="form-control" data-ng-model="addDeviceForm.MachineNumber" placeholder="Machine No" required="true" name="MachineNumber1"> 
+                                      <span style="color:red" ng-show="addDeviceForm.MachineNumber1.$dirty && addDeviceForm.MachineNumber1.$invalid">
+                        <span ng-show="addDeviceForm.MachineNumber1.$error.required">Machineno is required.</span>
+                                      </th>
                                       <th width="267px" class="fontbold">   Make:  	</th>
-                                      <th width="267px"> <input type="text" class="form-control" data-ng-model="addDeviceForm.Make" placeholder="Make"> </th>
+                                      <th width="267px"> <input type="text" class="form-control" data-ng-model="addDeviceForm.Make" placeholder="Make" required="true" name="Make1">
+                                       <span style="color:red" ng-show="addDeviceForm.Make1.$dirty && addDeviceForm.Make1.$invalid">
+                             <span ng-show="addDeviceForm.Make1.$error.required">Make is required.</span>
+                                       </th>
                                 </tr>
                                 <tr>
                                      <th width="267px" class="fontbold"> RFID No:  </th>
-                                      <th width="267px">	<input type="text" class="form-control" data-ng-model="addDeviceForm.RFID" placeholder=" RFID No"> </th>
+                                      <th width="267px">	<input type="text" class="form-control" data-ng-model="addDeviceForm.RFID" placeholder=" RFID No" required="true" name="RFID1">
+                                       <span style="color:red" ng-show="addDeviceForm.RFID1.$dirty && addDeviceForm.RFID1.$invalid">
+                             <span ng-show="addDeviceForm.RFID1.$error.required">RFIDno is required.</span> </th>
                                      <th width="267px" class="fontbold"> 	 Model   	</th>
-                                    <th width="267px">	<input type="text" class="form-control"  data-ng-model="addDeviceForm.Model" placeholder="Model"> </th>
+                                    <th width="267px">	<input type="text" class="form-control"  data-ng-model="addDeviceForm.Model" placeholder="Model" required="true" name="Model1">
+                                     <span style="color:red" ng-show="addDeviceForm.Model1.$dirty && addDeviceForm.Model1.$invalid">
+                             <span ng-show="addDeviceForm.Model1.$error.required">Model is required.</span>
+                                     </th>
                                 </tr>
                                 <tr>
                                      <th width="267px" class="fontbold">     Engine No:     </th>
-                                    <th width="267px">		<input type="text" class="form-control" data-ng-model="addDeviceForm.EngineNumber"  placeholder="Engine No"> </th>
+                                    <th width="267px">		<input type="text" class="form-control" data-ng-model="addDeviceForm.EngineNumber"  placeholder="Engine No" required="true" name="EngineNumber1">
+                                     <span style="color:red" ng-show="addDeviceForm.EngineNumber1.$dirty && addDeviceForm.EngineNumber1.$invalid">
+                             <span ng-show="addDeviceForm.EngineNumber1.$error.required">Enginenumber is required.</span>
+                                     </th>
                                      <th width="267px" class="fontbold">   type of Machine:  	</th>
-                                      <th width="267px" > 	   <input type="text" class="form-control" data-ng-model="addDeviceForm.TypeOfMachine"  placeholder="type of Machine">  </th>
+                                      <th width="267px" > 	   <input type="text" class="form-control" data-ng-model="addDeviceForm.TypeOfMachine"  placeholder="type of Machine" name="TypeOfMachine1" required="true"> 
+                                      <span style="color:red" ng-show="addDeviceForm.TypeOfMachine1.$dirty && addDeviceForm.TypeOfMachine1.$invalid">
+                             <span ng-show="addDeviceForm.TypeOfMachine1.$error.required">Type of machine is required.</span> </th>
                                 </tr>
                                 <tr>
                                      <th width="267px" class="fontbold">   Manufacture Year    </th>
-                                     <th width="267px"><input type="text" class="form-control" data-ng-model="addDeviceForm.Year"  placeholder="Manufacture Year"> 	</th>
+                                     <th width="267px"><input type="text" class="form-control" data-ng-model="addDeviceForm.Year"  placeholder="Manufacture Year" required="true" name="Year1"> 	
+                                     <span style="color:red" ng-show="addDeviceForm.Year1.$dirty && addDeviceForm.Year1.$invalid">
+                             <span ng-show="addDeviceForm.Year1.$error.required">Year is required.</span> </th>
                                      <th width="267px"  class="fontbold" >  type		</th>
-                                     <th width="267px">	  	<input type="text" class="form-control" data-ng-model="addDeviceForm.Type"  placeholder="type"> </th>
+                                     <th width="267px">	  	<input type="text" class="form-control" data-ng-model="addDeviceForm.Type"  placeholder="type">
+                                     <span style="color:red" ng-show="addDeviceForm.Year1.$dirty && addDeviceForm.Year1.$invalid">
+                             <span ng-show="addDeviceForm.Year1.$error.required">Year is required.</span> </th>
                                 </tr>
                         </table>
                     </div>
@@ -92,10 +118,15 @@
                             <thead class="eo">
                                 <tr>
                                    <th width="267px" class="fontbold">     Mobile Number:	</th>
-                                  <th width="267px">	<input type="text" class="form-control" data-ng-model="addDeviceForm.MobileNumber"  placeholder=" Mobile Number"> </th>
+                                  <th width="267px">	<input type="text" class="form-control" data-ng-model="addDeviceForm.MobileNumber"  placeholder=" Mobile Number" required="true" name="MobileNumber1">
+                                   <span style="color:red" ng-show="addDeviceForm.MobileNumber1.$dirty && addDeviceForm.MobileNumber1.$invalid">
+                             <span ng-show="addDeviceForm.MobileNumber1.$error.required"> Mobile number is required.</span>  </th>
                                     <th class="colorred" class="fontbold">   Mobile Activation Code</th>
-                                    <th width="267px">   <input type="text" class="form-control" data-ng-model="addDeviceForm.ActivationCode"  placeholder="Mobile Action Code"> </th>
-                                </tr>
+                                    <th width="267px">   <input type="text" class="form-control" data-ng-model="addDeviceForm.ActivationCode"  placeholder="Mobile Action Code" name="ActivationCode1" required="true"> 
+                                     <span style="color:red" ng-show="addDeviceForm.ActivationCode1.$dirty && addDeviceForm.ActivationCode1.$invalid">
+                             <span ng-show="addDeviceForm.ActivationCode1.$error.required"> Activationcode  is required.</span> 
+                                    </th>
+                               n</tr>
                             </thead>
                         </table>
                     </div>
@@ -160,7 +191,7 @@
                         <button type="button" class="btn btn-info pull-left">Cancel</button>
                     </div>
                     <div class="col-md-6">
-                        <button type="submit" class="btn btn-info pull-left" ng-click="SaveAddDevice()">Next</button>
+                        <button type="submit" class="btn btn-info pull-left" ng-click="SaveAddDevice()" ng-disabled="addDeviceForm.$invalid">Next</button>
                     </div>
                     </div>
                 </div>
