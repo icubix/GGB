@@ -1,5 +1,5 @@
 var app = angular.module('GGBApp.addeviceCtrl',['GGBApp.addevFactory','GGBApp.dvcFactory']);
-console.log("chheck testing");
+//console.log("chheck testing");
 app.controller('addeviceCtrl',function($scope,$rootScope,$routeParams,addDeviceFactory,deviceFactory,$location){
 $rootScope.IsVisible = true;
 //alert("Login controlloer calling");
@@ -10,17 +10,17 @@ var DeviceID = $routeParams.ID;
  $scope.SaveAddDevice = function () {
  			$scope.addDeviceForm.WRSNo = "TT/09/WRS/RRB/2017";	
  			$scope.addDeviceForm.UserID = 36;
-  			console.log($scope.addDeviceForm.WRSNo);
-  			console.log("kali");
+  			// console.log($scope.addDeviceForm.WRSNo);
+  			// console.log("kali");
 
               $scope.form.DeviceUDID = $scope.addDeviceForm.UDID  
              addDeviceFactory.CheckDeviceDetails( $scope.form).success(function (resultData) {
                                 console.log(resultData);
                                 if(resultData != 1)
                                 {
-                                    console.log($scope.addDeviceForm)
+                                    //console.log($scope.addDeviceForm)
                                                     addDeviceFactory.UpdateDeviceDetails($scope.addDeviceForm).success(function (resultData) {
-                                                    console.log(resultData);
+                                                    //console.log(resultData);
                                                     if(resultData != null)
                                                     {
                                                         $location.path('/check');

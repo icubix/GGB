@@ -1,5 +1,5 @@
 var app = angular.module('GGBApp.checkCtrl',['GGBApp.chkFactory']);
-console.log("chheck testing");
+//console.log("chheck testing");
 app.controller('checkCtrl',function($scope,$rootScope,checkFactory){
 $rootScope.IsVisible = true;
 $rootScope.showUser = false;
@@ -12,7 +12,7 @@ $rootScope.showSecurity = false;
 			// $scope.Devices = data;
 		
  		checkFactory.SearchDevices($scope.form).success(function(resultdata){
- 			console.log ("kali");
+ 			//console.log ("kali");
  			info = resultdata;
  			$scope.Devices = info;
  		})

@@ -25,7 +25,8 @@ router.post('/getIssueDetails',function(req,res){
 	return data;
 })
 
-router.get('/ShowEmails',function(req,res){
+router.post('/ShowEmails',function(req,res){
+	console.log(req.body);
 	var data = notification.ShowEmails(req,res);
 	return data;
 })

@@ -1,5 +1,5 @@
 var app = angular.module('GGBApp.notificationCtrl',['GGBApp.supportFactory']);
-console.log("notification testing");
+//console.log("notification testing");
 app.controller('supportFactory',function($scope,$rootScope,supportFactory){
 $rootScope.IsVisible = true;
 //alert("Login controlloer calling");

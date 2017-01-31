@@ -1,7 +1,7 @@
 var app = angular.module('GGBApp',['ngRoute','GGBApp.loginCtrl',
                                              'GGBApp.checkCtrl',
                                              'GGBApp.deviceCtrl',
-                                             'GGBApp.notificationCtrl',
+                                             'GGBApp.notificationCtrlModule',
                                              'GGBApp.productCtrl',
                                              'GGBApp.securityCtrl',
                                              'GGBApp.userCtrl',
@@ -11,7 +11,7 @@ var app = angular.module('GGBApp',['ngRoute','GGBApp.loginCtrl',
                                              ]);
 
 
-console.log('test ing ckali');
+//console.log('test ing ckali');
 
 app.config(function($routeProvider) {
   $routeProvider
@@ -33,7 +33,7 @@ app.config(function($routeProvider) {
   })
   .when('/notification',{
     templateUrl:'views/notification.html',
-    controller:'notificationCtrl'
+    controller:'notificationCtroller'
   })
   .when('/product',{
     templateUrl:'views/productdec.html',

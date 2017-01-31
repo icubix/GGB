@@ -59,6 +59,7 @@ function SentEmailDetails(FromEmailAddress,ToEmailAddress,AssignedTo,AssignedBy,
 
 Notification.prototype.ShowEmails = function(req,res) {
 	var query = "select * from tblEmailDetails where AssignedTo = '" + req.body.UserID + "'";
+	console.log(query);
 	connection.query(query,function(err,result){
 		if(err)
 		{

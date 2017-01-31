@@ -1,5 +1,5 @@
 var app = angular.module('GGBApp.resetCtrl',['GGBApp.rstFactory']);
-console.log("testing iunfo");
+//console.log("testing iunfo");
 app.controller('resetCtrl',function($scope,$rootScope,resetFactory,$routeParams,$location){
 
 /*    $rootScope.IsVisible = false;
