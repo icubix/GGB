@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 11, 2017 at 03:19 AM
+-- Generation Time: Jan 31, 2017 at 04:46 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.5.38
 
@@ -50,7 +50,8 @@ INSERT INTO `tbladdress` (`AddressID`, `Addressone`, `addresstwo`, `city`, `stat
 (15, 'undefined', 'undefined', 'undefined', 'undefined', 0, 'undefined', 'undefined', 'undefined'),
 (16, 'undefined', 'undefined', 'undefined', 'undefined', 0, 'undefined', 'undefined', 'undefined'),
 (17, 'undefined', 'undefined', 'undefined', 'undefined', 0, 'undefined', 'undefined', 'undefined'),
-(18, 'Flat No:402', 'Andey Villa, Shanthipuram', 'Vizag', 'Andhrapradesh', 2, '53016', '9849796848', '96584785');
+(18, 'Flat No:402', 'Andey Villa, Shanthipuram', 'Vizag', 'Andhrapradesh', 2, '53016', '9849796848', '96584785'),
+(19, 'undefined', 'undefined', 'undefined', 'undefined', 0, 'undefined', 'undefined', 'undefined');
 
 -- --------------------------------------------------------
 
@@ -70,13 +71,7 @@ CREATE TABLE `tblcompany` (
 
 INSERT INTO `tblcompany` (`companyid`, `companyname`, `userid`) VALUES
 (10, 'icubix', 36),
-(11, 'icubix', 37),
-(12, 'Active Dimensions', 38),
-(13, 'Active Dimensions', 39),
-(14, 'undefined', 40),
-(15, 'undefined', 41),
-(16, 'undefined', 42),
-(17, 'Active Dimensions', 43);
+(18, 'undefined', 44);
 
 -- --------------------------------------------------------
 
@@ -102,7 +97,8 @@ INSERT INTO `tblcompanyaddress` (`ID`, `CompanyID`, `AddressID`) VALUES
 (14, 14, 15),
 (15, 15, 16),
 (16, 16, 17),
-(17, 17, 18);
+(17, 17, 18),
+(18, 18, 19);
 
 -- --------------------------------------------------------
 
@@ -154,6 +150,58 @@ INSERT INTO `tbldevice` (`ID`, `UDID`, `ActivationDate`, `DeActivationDate`, `WR
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tblemaildetails`
+--
+
+CREATE TABLE `tblemaildetails` (
+  `ID` int(11) NOT NULL,
+  `FromAddress` varchar(500) NOT NULL,
+  `ToAddress` varchar(500) NOT NULL,
+  `Subject` varchar(500) NOT NULL,
+  `Body` varchar(2000) NOT NULL,
+  `EmailSentDate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `AssignedTo` varchar(500) NOT NULL,
+  `AssignedBy` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tblemaildetails`
+--
+
+INSERT INTO `tblemaildetails` (`ID`, `FromAddress`, `ToAddress`, `Subject`, `Body`, `EmailSentDate`, `AssignedTo`, `AssignedBy`) VALUES
+(1, 'gyan@gmail.com', 'cady@icubix.in', 'Ticket No 403', 'RX100 Device is not working', '2017-01-17 13:25:09', '38', '43'),
+(4, 'vamci.surada@gmail.com', 'cady@icubix.in', 'Ticket No 402', 'RX100 Device is not working', '2017-01-17 13:28:20', '38', '40');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblissuedetails`
+--
+
+CREATE TABLE `tblissuedetails` (
+  `ID` int(11) NOT NULL,
+  `CompanyID` int(11) NOT NULL,
+  `IssueDetails` varchar(2000) NOT NULL,
+  `SentDate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `RaisedBy` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tblissuedetails`
+--
+
+INSERT INTO `tblissuedetails` (`ID`, `CompanyID`, `IssueDetails`, `SentDate`, `RaisedBy`) VALUES
+(4, 10, 'RX100 Device is not working', '2017-01-17 13:16:58', '43'),
+(5, 10, 'RX100 Device is not working', '2017-01-17 13:18:15', '43'),
+(6, 10, 'RX100 Device is not working', '2017-01-17 13:18:52', '43'),
+(7, 10, 'RX100 Device is not working', '2017-01-17 13:25:09', '43'),
+(8, 0, 'undefined', '2017-01-17 13:26:43', 'undefined'),
+(9, 0, 'undefined', '2017-01-17 13:27:17', 'undefined'),
+(10, 10, 'RX13220 Device is not working', '2017-01-17 13:28:20', '40');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tblmachinedetails`
 --
 
@@ -175,11 +223,11 @@ CREATE TABLE `tblmachinedetails` (
 --
 
 INSERT INTO `tblmachinedetails` (`ID`, `MachineNumber`, `EngineNumber`, `RFID`, `Year`, `Make`, `Model`, `TypeOfMachine`, `Type`, `DeviceID`) VALUES
-(1, '', '', '', 2014, 'WTS', 'JUPITER', 'W2', 'W2S', 'GH9775JHGH8332'),
-(2, '', '', '', 2015, 'WTS', 'XAILO', 'W22', 'W3S', 'YH9775JHGH8332'),
-(3, '', '', '', 2015, 'WTS', 'JUPITER', 'W22', 'XSE', 'YH98723WSJHGH8332'),
-(4, '', '', '', 2016, 'WTS', 'KENIUYS', 'W22', 'W2E', 'YH98723WRESTE8332'),
-(5, '', '', '', 2016, 'WTS', '2016', 'W22', 'W3S', 'YH98723WRESTWE32');
+(1, 'EFR02332', 'EFR023', 'RRR32323', 2014, 'WTS', 'JUPITER', 'W2', 'W2S', 'GH9775JHGH8332'),
+(2, 'WRWER', 'QRWER', 'WER2323', 2015, 'WTS', 'XAILO', 'W2232', 'W3S', 'YH9775JHGH8332'),
+(3, 'ASFD', 'ASDF', '23234', 2015, 'WTS', 'JUPITER', 'W22', 'XSE', 'YH98723WSJHGH8332'),
+(4, 'ASDFASDF23', 'ASDFSADF2323', '3223SDF', 2016, 'WTS', 'KENIUYS', 'W22', 'W2E', 'YH98723WRESTE8332'),
+(5, 'ASDF234', 'SDFWER23', '232SDF', 2016, 'WTS', '2016', 'W22', 'W3S', 'YH98723WRESTWE32');
 
 -- --------------------------------------------------------
 
@@ -231,7 +279,8 @@ CREATE TABLE `tblresourcetable` (
   `AllocationArea` varchar(500) NOT NULL,
   `ExpiryDate` datetime NOT NULL,
   `RegulationValueOne` varchar(500) NOT NULL,
-  `RegulationValueTwo` varchar(500) NOT NULL
+  `RegulationValueTwo` varchar(500) NOT NULL,
+  `AllocationDate` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -288,14 +337,8 @@ CREATE TABLE `tbluserroles` (
 --
 
 INSERT INTO `tbluserroles` (`UserID`, `RoleID`, `ID`) VALUES
-(36, 1, 19),
-(37, 1, 20),
-(38, 1, 21),
-(39, 1, 22),
-(40, 1, 23),
-(41, 1, 24),
-(42, 1, 25),
-(43, 1, 26);
+(36, 5, 19),
+(43, 4, 26);
 
 -- --------------------------------------------------------
 
@@ -323,12 +366,6 @@ CREATE TABLE `tblusers` (
 
 INSERT INTO `tblusers` (`UserID`, `UserName`, `FirstName`, `LastName`, `PassWord`, `Title`, `WRSNo`, `EmailAddress`, `MobileNumber`, `CreateDate`, `isActive`) VALUES
 (36, 'Kalidasu', 'Kalidasu', 'Surada', 'test@123', 'Mr.Kalidasu Surada', '', 'Kalidasu.Surada@gmail.com', 'undefined', '2017-01-09 20:45:35', b'1'),
-(37, 'Kalidasu', 'Kalidasu', 'Surada', 'test@123', 'Mr.Kalidasu Surada', '', 'Kalidasu.Surada@gmail.com', 'undefined', '2017-01-09 20:45:37', b'1'),
-(38, 'vamci', 'Vamci', 'Surada', 'test@123', 'Mr. Vamsi Surada', '', 'vamci.surada@gmail.com', 'undefined', '2017-01-09 20:47:29', b'1'),
-(39, 'vamci', 'Vamci', 'Surada', 'test@123', 'Mr. Vamsi Surada', '', 'vamci.surada@gmail.com', 'undefined', '2017-01-09 20:47:32', b'1'),
-(40, 'undefined', 'undefined', 'undefined', 'undefined', 'undefined', '', 'undefined', 'undefined', '2017-01-09 20:48:04', b'1'),
-(41, 'undefined', 'undefined', 'undefined', 'undefined', 'undefined', '', 'undefined', 'undefined', '2017-01-09 20:48:27', b'1'),
-(42, 'undefined', 'undefined', 'undefined', 'undefined', 'undefined', '', 'undefined', 'undefined', '2017-01-09 21:09:57', b'1'),
 (43, 'gyan', 'Gyan', 'Surada', 'test@123', 'Mr. Gyan', '', 'gyan@gmail.com', 'undefined', '2017-01-10 08:54:06', b'1');
 
 -- --------------------------------------------------------
@@ -359,7 +396,8 @@ INSERT INTO `tblusersecurityquestions` (`ID`, `UserID`, `QuestionID`, `Answer`, 
 (6, 40, 0, 'undefined', b'1', '2017-01-09 20:48:04'),
 (7, 41, 0, 'undefined', b'1', '2017-01-09 20:48:27'),
 (8, 42, 0, 'undefined', b'1', '2017-01-09 21:09:57'),
-(9, 43, 1, 'gyan', b'1', '2017-01-10 08:54:06');
+(9, 43, 1, 'gyan', b'1', '2017-01-10 08:54:06'),
+(10, 44, 0, 'undefined', b'1', '2017-01-19 09:59:54');
 
 -- --------------------------------------------------------
 
@@ -410,6 +448,18 @@ ALTER TABLE `tblcountries`
 -- Indexes for table `tbldevice`
 --
 ALTER TABLE `tbldevice`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `tblemaildetails`
+--
+ALTER TABLE `tblemaildetails`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `tblissuedetails`
+--
+ALTER TABLE `tblissuedetails`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -480,17 +530,17 @@ ALTER TABLE `tblvalidate`
 -- AUTO_INCREMENT for table `tbladdress`
 --
 ALTER TABLE `tbladdress`
-  MODIFY `AddressID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `AddressID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT for table `tblcompany`
 --
 ALTER TABLE `tblcompany`
-  MODIFY `companyid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `companyid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `tblcompanyaddress`
 --
 ALTER TABLE `tblcompanyaddress`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `tblcountries`
 --
@@ -500,12 +550,22 @@ ALTER TABLE `tblcountries`
 -- AUTO_INCREMENT for table `tbldevice`
 --
 ALTER TABLE `tbldevice`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT for table `tblemaildetails`
+--
+ALTER TABLE `tblemaildetails`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `tblissuedetails`
+--
+ALTER TABLE `tblissuedetails`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `tblmachinedetails`
 --
 ALTER TABLE `tblmachinedetails`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `tblmastersecurityquestions`
 --
@@ -535,17 +595,17 @@ ALTER TABLE `tblsso`
 -- AUTO_INCREMENT for table `tbluserroles`
 --
 ALTER TABLE `tbluserroles`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT for table `tblusers`
 --
 ALTER TABLE `tblusers`
-  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 --
 -- AUTO_INCREMENT for table `tblusersecurityquestions`
 --
 ALTER TABLE `tblusersecurityquestions`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `tblvalidate`
 --
