@@ -7,7 +7,8 @@ var app = angular.module('GGBApp',['ngRoute','GGBApp.loginCtrl',
                                              'GGBApp.userCtrl',
                                              'GGBApp.forgotCtrl',
                                              'GGBApp.resetCtrl',
-                                             'GGBApp.addeviceCtrl'
+                                             'GGBApp.addeviceCtrl',
+                                             'GGBApp.adminCtrl'
                                              ]);
 
 
@@ -64,6 +65,10 @@ app.config(function($routeProvider) {
    .when('/forgot',{
     templateUrl:'views/forgot.html',
     controller:'forgotCtrl'
+  })
+    .when('/admin',{
+    templateUrl:'views/admin1.html',
+    controller:'adminCtrl'
   })
   .otherwise({redirectTo: '/login'});
 });
